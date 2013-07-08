@@ -112,14 +112,18 @@ h2.main,
 }
 
 a.logo {
-    background: url([[setting:logo]]) no-repeat 0 0;
+    background: url([[pix:theme|mdl_logo_grey]]) no-repeat 0 0;
     display: block;
     float: left;
-    height: 75px;
+    height: 66px;
     margin: 0;
     padding: 0;
     width: 100%;
     background-size: contain;
+}
+
+a.logo:hover {
+    background: url([[pix:theme|mdl_logo]]) no-repeat 0 0;
 }
 
 h1#title {
