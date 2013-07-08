@@ -37,7 +37,11 @@ a:hover{
 }
 
 .dir-rtl a.logo {
-    background: url([[setting:logo]]) no-repeat 100% 0;
+    background: url([[pix:theme|mdl_logo_grey]]) no-repeat 100% 0;
+}
+
+.dir-rtl a.logo:hover {
+    background: url([[pix:theme|mdl_logo]]) no-repeat 100% 0;
 }
 
 /* @group Custom */
@@ -61,7 +65,11 @@ a:hover{
 }
 
 a.logo {
-    background: url([[setting:logo]]) no-repeat 0 0;
+    background: url([[pix:theme|mdl_logo_grey]]) no-repeat 0 0;
+}
+
+a.logo:hover {
+    background: url([[pix:theme|mdl_logo]]) no-repeat 0 0;
 }
 
 h1#title {
