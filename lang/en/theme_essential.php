@@ -73,6 +73,8 @@ $string['headerprofilepic'] = 'Display user\'s picture';
 $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side. If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+$string['spinner'] = 'Use page loading animation';
+$string['spinnerdesc'] = 'Many users, teachers especialy, create issues while clicking links while the page is still loading. If this is eabled it shows a spinning image while page is still loading. Works across all browsers';
 
 /* Navbar Seperator */
 $string['navbarsep'] = 'Navbar Seperator';

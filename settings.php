@@ -58,10 +58,19 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // Custom or standard layout.
+    // Toggle custom or standard layout.
     $name = 'theme_essential/layout';
     $title = get_string('layout', 'theme_essential');
     $description = get_string('layoutdesc', 'theme_essential');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Toggle loading spinner.
+    $name = 'theme_essential/spinner';
+    $title = get_string('spinner', 'theme_essential');
+    $description = get_string('spinnerdesc', 'theme_essential');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');

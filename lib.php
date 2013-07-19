@@ -229,7 +229,10 @@ function theme_essential_set_slideimage($css, $slideimage, $setting) {
 
 function theme_essential_page_init(moodle_page $page) {
     $page->requires->jquery();
+    // Generates frontpage slideshow.
     $page->requires->jquery_plugin('modernizr', 'theme_essential');
     $page->requires->jquery_plugin('cslider', 'theme_essential');
-    $page->requires->jquery_plugin('custom', 'theme_essential');   
+    $page->requires->jquery_plugin('custom', 'theme_essential');
+    // Generates page loading throbber.
+    $page->requires->jquery_plugin('spin', 'theme_essential'); 
 }

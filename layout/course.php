@@ -43,6 +43,7 @@ $showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('f
 $showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
 $showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
+$hasspinner = (empty($PAGE->theme->settings->spinner)) ? false : $PAGE->theme->settings->spinner;
 
 // If there can be a sidepost region on this page and we are editing, always
 // show it so blocks can be dragged into it.
@@ -134,6 +135,7 @@ if ($hasheader) {
     </nav>
 </header>
 
+<div id="loading" class="loading"></div>
 	<?php if ($hasboringlayout) { ?>
 		<?php require('standard.php'); ?>
 	<?php } else { ?>
@@ -149,5 +151,34 @@ if ($hasheader) {
 
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
+<?php if ($hasspinner) { ?>
+<script type="text/javascript">
+    // Create the Spinner with options
+	var opts = {
+		lines: 9, // The number of lines to draw
+  		length: 10, // The length of each line
+  		width: 5, // The line thickness
+  		radius: 18, // The radius of the inner circle
+  		corners: 1, // Corner roundness (0..1)
+  		rotate: 0, // The rotation offset
+  		direction: 1, // 1: clockwise, -1: counterclockwise
+  		color: '#999', // #rgb or #rrggbb
+  		speed: 1, // Rounds per second
+  		trail: 60, // Afterglow percentage
+  		shadow: false, // Whether to render a shadow
+  		hwaccel: true, // Whether to use hardware acceleration
+  		className: 'spinner', // The CSS class to assign to the spinner
+  		zIndex: 2e9, // The z-index (defaults to 2000000000)
+  		top: '115px', // Top position relative to parent in px
+  		left: 'auto', // Left position relative to parent in px
+	};
+	var target = document.getElementById('region-main');
+	var spinner = new Spinner(opts).spin(target);
+	
+	window.onload = function() {
+    	spinner.stop();
+	};
+</script>
+<?php } ?>
 </body>
 </html>
