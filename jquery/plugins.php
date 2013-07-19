@@ -39,5 +39,6 @@
 $plugins = array(
     'modernizr'     => array('files' => array('modernizr.js')),
     'cslider'     => array('files' => array('cslider.js')),
-    'custom'   => array('files' => array('custom.js'))
+    'custom'   => array('files' => array('custom.js')),
+    'spin'   => array('files' => array('spin.js'))
 );
