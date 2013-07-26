@@ -67,6 +67,7 @@ $hasfootnote = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme-
     	<p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
     <?php if ($hascopyright) {
         echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
+        echo '<a class="footer-logo" href="http://www.blackpool.ac.uk" title="College website" target="_blank"></a>';
     } ?>
     
     <?php if ($hasfootnote) {
