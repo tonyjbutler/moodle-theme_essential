@@ -32,7 +32,7 @@ $THEME->name = 'essential';
 
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom', 'slides', 'font-awesome');
+$THEME->sheets = array('custom', 'slides', 'font-awesome', 'block_login');
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 
