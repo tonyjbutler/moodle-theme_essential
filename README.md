@@ -6,7 +6,7 @@ With 2.5 now release I thought it time to take the opportunity to build a new th
 The idea of this theme, as usual with my themes, is to make the site look as little like Moodle as possible. In this specific instance, it would be used on sites where Moodle would potentially serve as a company homepage rather than just a course list.
 
 Cool things to know about the theme.
- - It only uses 6 images.
+ - It only uses 4 images.
  - Most of what you think are "graphics" are actually the [Awesome font](http://fortawesome.github.io/Font-Awesome/)
  - The slider on the frontpage of the demo site is completely customisable through theme settings
  - I am really trying to push what [Bootstrap](http://twitter.github.io/bootstrap/) Grids can do. As such the theme is fully responsive.
@@ -19,12 +19,19 @@ Cool things to know about the theme.
  New in 2.5.3
  ========================
  - New Settings screen just for color selection
- - Can now upload your own background image
+ - Admin can now toggle to use "autohide" functionality in courses.
+ - Admin now upload their own background image
  - Can now set colors for footer area
  - Cleanup of required images (Theme now only uses 4 images)
  - Performance info now neatly formatted.
+ - Fixed Custom Menu color in IE8 and IE9
  - Can now upload optional images into the marketing spots
+ - Now available in English, German, Russian, Turkish and Spanish (many thanks to the Moodle Community for translating)
+ - New Pinterest, Instagram, Skype and the Russian VK social networks added.
+ - Can now add links to Mobile apps on the iOS App Store and Google Play
+ - New formatting on login block
  - Minor CSS Fixes
+ - EXPERIMENTAL: New course editing icons formatted and built with Font Awesome can now be used.
  
 2.5.2
 ========================

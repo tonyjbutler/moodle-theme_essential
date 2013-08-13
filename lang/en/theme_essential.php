@@ -48,6 +48,10 @@ Website: <a href="http://www.moodleman.net">www.moodleman.net</a>
 
 /* General */
 $string['geneicsettings'] = 'General Settings';
+$string['autohide'] = 'Include Autohide Functionality';
+$string['autohidedesc'] = 'The Autohide functionality is designed to make Moodle less intimidating. When editing is turned on edit icons only appear when the item is hovered over.';
+$string['editicons'] = 'Edit Icons V2';
+$string['editiconsdesc'] = 'This utilises the Font Awesome to display colored and neater formatted edit icons in course pages and blocks. Please note that currsently this is NOT compatible with Autohide.';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 $string['footnote'] = 'Footnote';
@@ -236,6 +240,32 @@ $string['youtubedesc'] = 'Enter the URL of your YouTube channel. (i.e http://www
 
 $string['flickr'] = 'Flickr URL';
 $string['flickrdesc'] = 'Enter the URL of your Flickr page. (i.e http://www.flickr.com/mycollege)';
+
+$string['vk'] = 'VKontakte URL';
+$string['vkdesc'] = 'Enter the URL of your Vkontakte page. (i.e http://www.vk.com/mycollege)';
+
+$string['skype'] = 'Skype Account';
+$string['skypedesc'] = 'Enter the Skype username of your organisations Skype account';
+
+$string['pinterest'] = 'Pinterest URL';
+$string['pinterestdesc'] = 'Enter the URL of your Pinterest page. (i.e http://pinterest.com/mycollege)';
+
+$string['instagram'] = 'Instagram URL';
+$string['instagramdesc'] = 'Enter the URL of your Instagram page. (i.e http://instagram.com/mycollege)';
+
+$string['website'] = 'Website URL';
+$string['websitedesc'] = 'Enter the URL of your own website. (i.e http://www.pukunui.com)';
+
+/* Mobile Apps */
+$string['mobileappsheading'] = 'Mobile Apps';
+$string['mobileappsheadingsub'] = 'Link to your App to get your students using Mobiles';
+$string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store? Provide a link here so your users can grab the apps online';
+
+$string['android'] = 'Android (Google Play)';
+$string['androiddesc'] = 'Prove a URL to your mobile App on the Google Play Store. If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+
+$string['ios'] = 'iPhone/iPad (App Store)';
+$string['iosdesc'] = 'Prove a URL to your mobile App on the App Store. If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
 
 /* Alerts */
 $string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly. Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>. Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers. If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly. If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
