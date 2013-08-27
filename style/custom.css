@@ -276,9 +276,9 @@ ul.socials {
 }
 
 .dropdown [class^="icon-"] {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	margin-right: 5px;
-	vertical-align: middle;	
+	vertical-align: top;	
 }
 /* @end */
 
@@ -1771,6 +1771,17 @@ table#user-grades th.userreport.c1 {
 
 /* @end */
 
+
+.useralerts [class^="icon-stack"] {
+	float: left;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.useralerts .title {
+	font-weight: bold;
+	margin-right: 10px;
+}
 /**
  * editicons CSS
  * This adds the special editicons css in editicons.css if the setting is enabled.

@@ -81,10 +81,22 @@ $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 
-/* My Courses custommenu dropdown */
+/* CustomMenu */
+$string['custommenuheading'] = 'Custom Menu';
+$string['custommenuheadingsub'] = 'Add additional functionality to your custommenu.';
+$string['custommenudesc'] = 'Settings here allow you to add new dynamic functionality to the custommenu (also refered to as Dropdown menu)';
+
+$string['mydashboardinfo'] = 'Custom User Dashboard';
+$string['mydashboardinfodesc'] = 'Displays a list of common functions used by users.';
+$string['displaymydashboard'] = 'Display Dashboard';
+$string['displaymydashboarddesc'] = 'Display Dashboard of user links in the Custom Menu';
+
+$string['mycoursesinfo'] = 'Dynamic Enrolled Courses List';
+$string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';
 $string['displaymycourses'] = 'Display enrolled courses';
 $string['displaymycoursesdesc'] = 'Display enrolled courses for users in the Custom Menu';
-$string['mycoursetitle'] = 'Dropdown menu "My Course" Terminology';
+
+$string['mycoursetitle'] = 'Terminology';
 $string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
 $string['mycourses'] = 'My Courses';
 $string['myunits'] = 'My Units';
@@ -95,6 +107,14 @@ $string['allunits'] = 'All Units';
 $string['allmodules'] = 'All Modules';
 $string['allclasses'] = 'All Classes';
 $string['noenrolments'] = 'You have no current enrolments';
+
+/* My Dashboard custommenu dropdown */
+$string['mydashboard'] = 'My Dashboard';
+$string['calendar'] = 'Calendar';
+$string['profile'] = 'Profile';
+$string['messages'] = 'Messages';
+$string['badges'] = 'Badges';
+$string['privatefiles'] = 'Private Files';
 
 /* Navbar Seperator */
 $string['navbarsep'] = 'Navbar Separator';
@@ -160,44 +180,24 @@ $string['dontdisplay'] = 'Do not Display';
 $string['readmore'] = 'Read More';
 
 $string['slideshowTitle'] = 'Slideshow';
-$string['slide1'] = 'Slide One: Title';
-$string['slide1desc'] = 'Enter a descriptive title for your slide';
-$string['slide1image'] = 'Slide One: Image';
-$string['slide1imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide1caption'] = 'Slide One: Caption';
-$string['slide1captiondesc'] = 'Enter the caption text to use for the first slide';
-$string['slide1url'] = 'Slide One: Image Link';
-$string['slide1urldesc'] = 'Enter the target destination of the first slide\'s image link';
+$string['slideinfodesc'] = 'Enter the settings for your slide.';
+$string['slide1'] = 'Slide One';
+$string['slide2'] = 'Slide Two';
+$string['slide3'] = 'Slide Three';
+$string['slide4'] = 'Slide Four';
 
-$string['slide2'] = 'Slide Two: Title';
-$string['slide2desc'] = 'Enter a descriptive title for your slide';
-$string['slide2image'] = 'Slide Two: Image';
-$string['slide2imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide2caption'] = 'Slide Two: Caption';
-$string['slide2captiondesc'] = 'Enter the caption text to use for the second slide';
-$string['slide2url'] = 'Slide Two: Image Link';
-$string['slide2urldesc'] = 'Enter the target destination of the second slide\'s image link';
-
-$string['slide3'] = 'Slide Three: Title';
-$string['slide3desc'] = 'Enter a descriptive title for your slide';
-$string['slide3image'] = 'Slide Three: Image';
-$string['slide3imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide3caption'] = 'Slide Three: Caption';
-$string['slide3captiondesc'] = 'Enter the caption text to use for the third slide';
-$string['slide3url'] = 'Slide Three: Image Link';
-$string['slide3urldesc'] = 'Enter the target destination of the third slide\'s image link';
-
-$string['slide4'] = 'Slide Four: Title';
-$string['slide4desc'] = 'Enter a descriptive title for your slide';
-$string['slide4image'] = 'Slide Four: Image';
-$string['slide4imagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
-$string['slide4caption'] = 'Slide Four: Caption';
-$string['slide4captiondesc'] = 'Enter the caption text to use for the fourth slide';
-$string['slide4url'] = 'Slide Four: Image Link';
-$string['slide4urldesc'] = 'Enter the target destination of the fourth slide\'s image link';
+$string['slidetitle'] = 'Slide Title';
+$string['slidetitledesc'] = 'Enter a descriptive title for your slide';
+$string['slideimage'] = 'Slide Image';
+$string['slideimagedesc'] = 'Image works best if it is transparent. (Image size should be 256px x 256px)';
+$string['slidecaption'] = 'Slide Caption';
+$string['slidecaptiondesc'] = 'Enter the caption text to use for the first slide';
+$string['slideurl'] = 'Slide Link';
+$string['slideurldesc'] = 'Enter the target destination of the first slide\'s image link';
 
 /* Marketing Spots */
 $string['marketingheading'] = 'Marketing Spots';
+$string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
 $string['marketingheight'] = 'Height of Marketing Images';
 $string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their hight here.';
@@ -207,44 +207,22 @@ $string['togglemarketing'] = 'Toggle Marketing Spot display';
 $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
 
 
-$string['marketing1'] = 'Marketing Spot One - Title';
-$string['marketing1desc'] = 'Title to show in this marketing spot';
-$string['marketing1icon'] = 'Marketing Spot One - Icon';
-$string['marketing1icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
-$string['marketing1image'] = 'Marketing Spot One - Image';
-$string['marketing1imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
-$string['marketing1content'] = 'Marketing Spot One - Content';
-$string['marketing1contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketing1buttontext'] = 'Marketing Spot One - Link Text';
-$string['marketing1buttontextdesc'] = 'Text to appear on the button.';
-$string['marketing1buttonurl'] = 'Marketing Spot One - Link URL';
-$string['marketing1buttonurldesc'] = 'URL the button will point to.';
+$string['marketing1'] = 'Marketing Spot One';
+$string['marketing2'] = 'Marketing Spot Two';
+$string['marketing3'] = 'Marketing Spot Three';
 
-$string['marketing2'] = 'Marketing Spot Two - Title';
-$string['marketing2desc'] = 'Title to show in this marketing spot';
-$string['marketing2icon'] = 'Marketing Spot Two - Icon';
-$string['marketing2icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. J ust enter what is after the "icon-".';
-$string['marketing2image'] = 'Marketing Spot Two - Image';
-$string['marketing2imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
-$string['marketing2content'] = 'Marketing Spot Two - Content';
-$string['marketing2contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketing2buttontext'] = 'Marketing Spot Two - Link Text';
-$string['marketing2buttontextdesc'] = 'Text to appear on the button.';
-$string['marketing2buttonurl'] = 'Marketing Spot Two - Link URL';
-$string['marketing2buttonurldesc'] = 'URL the button will point to.';
-
-$string['marketing3'] = 'Marketing Spot Three - Title';
-$string['marketing3desc'] = 'Title to show in this marketing spot';
-$string['marketing3icon'] = 'Marketing Spot Three - Icon';
-$string['marketing3icondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
-$string['marketing3image'] = 'Marketing Spot Three - Image';
-$string['marketing3imagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
-$string['marketing3content'] = 'Marketing Spot Three - Content';
-$string['marketing3contentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
-$string['marketing3buttontext'] = 'Marketing Spot Three - Link Text';
-$string['marketing3buttontextdesc'] = 'Text to appear on the button.';
-$string['marketing3buttonurl'] = 'Marketing Spot Three - Link URL';
-$string['marketing3buttonurldesc'] = 'URL the button will point to.';
+$string['marketingtitle'] = 'Title';
+$string['marketingtitledesc'] = 'Title to show in this marketing spot';
+$string['marketingicon'] = 'Icon';
+$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "icon-".';
+$string['marketingimage'] = 'Image';
+$string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot';
+$string['marketingcontent'] = 'Content';
+$string['marketingcontentdesc'] = 'Content to display in the marketing box. Keep it short and sweet.';
+$string['marketingbuttontext'] = 'Link Text';
+$string['marketingbuttontextdesc'] = 'Text to appear on the button.';
+$string['marketingbuttonurl'] = 'Link URL';
+$string['marketingbuttonurldesc'] = 'URL the button will point to.';
 
 /* Social Networks */
 $string['socialheading'] = 'Social Networking';
@@ -310,4 +288,28 @@ $string['analyticsclean'] = 'Send Clean URLs';
 $string['analyticscleandesc'] = 'This fantastic feature was created by <a href="https://moodle.org/user/profile.php?id=281671" target="_blank">Gavin Henrick</a> and <a href="https://moodle.org/user/view.php?id=907814" target="_blank">Bas Brands</a> and is implemented in this theme. Rather than standard Moodle URLs the theme will send out clean URLs making it easier to identify the page and provide advanced reporting. More information on using this feature and its uses can be <b><a href="http://www.somerandomthoughts.com/blog/2012/04/18/ireland-uk-moodlemoot-analytics-to-the-front/" target="_blank">found here</a></b>.';
 
 /* Alerts */
+$string['alertsheading'] = 'User Alerts';
+$string['alertsheadingsub'] = 'Display important messages to your users on the frontpage';
+$string['alertsdesc'] = 'This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.';
+
+$string['enablealert'] = 'Enable Alert';
+$string['enablealertdesc'] = 'Enabe or disable alerts';
+
+$string['alert1'] = 'First Alert';
+$string['alert2'] = 'Second Alert';
+$string['alert3'] = 'Third Alert';
+
+$string['alerttitle'] = 'Title';
+$string['alerttitledesc'] = 'Main title/heading for your alert';
+
+$string['alerttype'] = 'Level';
+$string['alerttypedesc'] = 'Set the appropriate alert level/type to best inform your users';
+
+$string['alerttext'] = 'Alert Text';
+$string['alerttextdesc'] = 'What is the text you wish to display in your alert';
+
+$string['alert_info'] = 'Information';
+$string['alert_warning'] = 'Warning';
+$string['alert_general'] = 'Announcement';
+
 $string['ie7message'] = '<p id="ie7message">Sorry, this site requires <strong>Internet Explorer 8</strong> or higher to display and function correctly.  Please update your browser via Windows Update, or <a href="http://windows.microsoft.com/en-au/internet-explorer/download-ie" target="_blank">download the latest version here</a>.  Alternatively, you can try installing the <a href="http://www.google.com/chromeframe" target="_blank">ChromeFrame plugin</a> which may solve some of the issues experienced in older browsers.  If using IE8 or above you may have Compatibility Mode switched on, turn this off to display this website correctly.  If you continue having problems accessing this website or the updates mentioned above, please contact your Helpdesk for further assistance.</p>';
