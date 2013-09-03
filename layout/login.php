@@ -15,40 +15,23 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * OUC theme with the underlying Bootstrap theme.
+ * This is built using the Clean template to allow for new theme's using
+ * Moodle's new Bootstrap theme engine
  *
- * @package    theme
- * @subpackage Essential
- * @author     Julian (@moodleman) Ridden
- * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * @package   theme_essential
+ * @copyright 2013 Julian Ridden
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$pre = 'side-pre';
-$post = 'side-post';
-if (right_to_left()) {
-    $regionbsid = 'region-bs-main-and-post';
-    // In RTL the sides are reversed, so swap the 'essentialblocks' method parameter....
-    $temp = $pre;
-    $pre = $post;
-    $post = $temp;
-} else {
-    $regionbsid = 'region-bs-main-and-pre';
-}
+$hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
+$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
-$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
-$hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
-$hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
-$contentclass = 'span8';
-$blockclass = 'span4';
 
-if (!($hassidepre AND $hassidepost)) {
-    // Two columns.
-    $contentclass = 'span9';
-    $blockclass = 'span3';
-}
+$regionbsid = 'region-bs-main-and-post';
+
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -91,27 +74,27 @@ echo $OUTPUT->doctype() ?>
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
 	<div id="page-content" class="row-fluid">
-		<?php echo $OUTPUT->essentialblocks($pre, 'span3 desktop-first-column'); ?>
-        <div id="<?php echo $regionbsid ?>" class="span9  pull-right">
-            <div class="row-fluid">
-				<section id="region-main" class="row-fluid">
-					<div id="page-navbar" class="clearfix">
-						<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-						<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-					</div>
-					<?php
-					echo $OUTPUT->course_content_header();
-					echo $OUTPUT->main_content();
-					echo $OUTPUT->course_content_footer();
-					?>
-				</section>
-			</div>
-        </div>
+        <section id="region-main" class="span12">
+            <?php
+            echo $OUTPUT->course_content_header();
+            echo $OUTPUT->main_content();
+            echo $OUTPUT->course_content_footer();
+            ?>
+        </section>
     </div>
 </div>
 <!-- End Main Regions --> 
- 
-<a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
+
+<?php if (is_siteadmin()) { ?>
+<div class="hidden-blocks">
+    <div class="row-fluid">
+        <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
+            <?php
+                echo $OUTPUT->essentialblocks('hidden-dock');
+            ?>
+    </div>
+</div>
+<?php } ?>
 
 <footer id="page-footer" class="container-fluid">
             <?php require_once(dirname(__FILE__).'/footer.php'); ?>
@@ -127,24 +110,5 @@ echo $OUTPUT->doctype() ?>
 <?php } ?>
 <!-- End Google Analytics -->
 
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-        }
-    });
-    
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-});
-</script>
 </body>
 </html>
