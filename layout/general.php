@@ -15,87 +15,47 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This is built using the Clean template to allow for new theme's using
- * Moodle's new Bootstrap theme engine
+ * OUC theme with the underlying Bootstrap theme.
  *
- *
- * @package   theme_essential
- * @copyright 2013 Julian Ridden
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    theme
+ * @subpackage Essential
+ * @author     Julian (@moodleman) Ridden
+ * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$hasheading = ($PAGE->heading);
-$hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
-$hasfooter = (empty($PAGE->layout_options['nofooter']));
-$hasheader = (empty($PAGE->layout_options['noheader']));
+$pre = 'side-pre';
+$post = 'side-post';
 
-$hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
-$hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
-
-$hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
-$hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-middle', $OUTPUT));
-$hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
-
-$showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
-$showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
-
-$showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('footer-left', $OUTPUT));
-$showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
-$showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
-$hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
-$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
-
-// If there can be a sidepost region on this page and we are editing, always
-// show it so blocks can be dragged into it.
-if ($PAGE->user_is_editing()) {
-    if ($PAGE->blocks->is_known_region('side-pre')) {
-        $showsidepre = true;
-    }
-    if ($PAGE->blocks->is_known_region('side-post')) {
-        $showsidepost = true;
-    }
+if (right_to_left()) {
+    $regionbsid = 'region-bs-main-and-post';
+    // In RTL the sides are reversed, so swap the 'essentialblocks' method parameter....
+    $temp = $pre;
+    $pre = $post;
+    $post = $temp;
+} else {
+    $regionbsid = 'region-bs-main-and-pre';
 }
 
 $haslogo = (!empty($PAGE->theme->settings->logo));
+$hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->theme->settings->layout;
+$hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
+$hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
+$hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
+$contentclass = 'span8';
+$blockclass = 'span4';
 
-$hasfootnote = (!empty($PAGE->theme->settings->footnote));
-$custommenu = $OUTPUT->custom_menu();
-$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
-
-$courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
-
-if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
-    $courseheader = $OUTPUT->course_header();
-    $coursecontentheader = $OUTPUT->course_content_header();
-    if (empty($PAGE->layout_options['nocoursefooter'])) {
-        $coursecontentfooter = $OUTPUT->course_content_footer();
-        $coursefooter = $OUTPUT->course_footer();
-    }
+if (!($hassidepre AND $hassidepost)) {
+    // Two columns.
+    $contentclass = 'span9';
+    $blockclass = 'span3';
 }
-
-$layout = 'pre-and-post';
-if ($showsidepre && !$showsidepost) {
-    if (!right_to_left()) {
-        $layout = 'side-pre-only';
-    } else {
-        $layout = 'side-post-only';
-    }
-} else if ($showsidepost && !$showsidepre) {
-    if (!right_to_left()) {
-        $layout = 'side-post-only';
-    } else {
-        $layout = 'side-pre-only';
-    }
-} else if (!$showsidepost && !$showsidepre) {
-    $layout = 'content-only';
-}
-$bodyclasses[] = $layout;
 
 echo $OUTPUT->doctype() ?>
-<html <?php echo $OUTPUT->htmlattributes() ?>>
+<html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
-    <title><?php echo $PAGE->title ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
+    <title><?php echo $OUTPUT->page_title(); ?></title>
+    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
@@ -103,15 +63,11 @@ echo $OUTPUT->doctype() ?>
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 </head>
 
-<body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
+<body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php 
-if ($hasheader) {
-    require_once(dirname(__FILE__).'/header.php');
-}
-?>
+<?php require_once(dirname(__FILE__).'/header.php'); ?>
 
 <header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
@@ -123,11 +79,9 @@ if ($hasheader) {
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-            <?php if ($hascustommenu) {
-                echo $custommenu;
-            } ?>
+            <?php echo $OUTPUT->custom_menu(); ?>
             <ul class="nav pull-right">
-            <li><?php echo $PAGE->headingmenu ?></li>
+            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
             <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
             </ul>
             </div>
@@ -135,11 +89,43 @@ if ($hasheader) {
     </nav>
 </header>
 
-<?php if ($hasboringlayout) { ?>
-		<?php require_once(dirname(__FILE__).'/standard.php'); ?>
-	<?php } else { ?>
-		<?php require_once(dirname(__FILE__).'/essential.php'); ?>
-	<?php } ?>  
+<!-- Start Main Regions -->
+<div id="page" class="container-fluid">
+	<div id="page-content" class="row-fluid">
+        <div id="<?php echo $regionbsid ?>" class="span9">
+            <div class="row-fluid">
+                <?php if ($hasboringlayout) { ?>
+                	<div id="region-main-essential" class="<?php echo $contentclass; ?> pull-right">
+                <?php } else { ?>
+                	<div id="region-main-essential" class="<?php echo $contentclass; ?>">
+                <?php } ?>
+                    <section id="region-main" class="row-fluid">
+                    	<div id="page-navbar" class="clearfix">
+            				<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+            				<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+        				</div>
+                        <?php
+                        echo $OUTPUT->course_content_header();
+                        echo $OUTPUT->main_content();
+                        echo $OUTPUT->course_content_footer();
+                        ?>
+                    </section>
+                </div>
+                <?php 
+                if ($hasboringlayout) {
+					echo $OUTPUT->essentialblocks($pre, $blockclass.' desktop-first-column'); 
+				} else {
+					echo $OUTPUT->essentialblocks($pre, $blockclass.' pull-right');
+				}
+				?>
+            </div>
+        </div>
+        <?php echo $OUTPUT->essentialblocks($post, 'span3'); ?>
+    </div>
+</div>
+<!-- End Main Regions --> 
+ 
+<a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_essential'); ?></p></a>
 
 <footer id="page-footer" class="container-fluid">
             <?php require_once(dirname(__FILE__).'/footer.php'); ?>
@@ -151,9 +137,28 @@ if ($hasheader) {
 
 <!-- Start Google Analytics -->
 <?php if ($hasanalytics) { ?>
-		<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
+	<?php require_once(dirname(__FILE__).'/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
 
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
+    
+    jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+});
+</script>
 </body>
 </html>

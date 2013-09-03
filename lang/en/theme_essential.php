@@ -80,6 +80,7 @@ $string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance
 $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
+$string['backtotop'] = 'Back to top';
 
 /* CustomMenu */
 $string['custommenuheading'] = 'Custom Menu';
@@ -110,11 +111,6 @@ $string['noenrolments'] = 'You have no current enrolments';
 
 /* My Dashboard custommenu dropdown */
 $string['mydashboard'] = 'My Dashboard';
-$string['calendar'] = 'Calendar';
-$string['profile'] = 'Profile';
-$string['messages'] = 'Messages';
-$string['badges'] = 'Badges';
-$string['privatefiles'] = 'Private Files';
 
 /* Navbar Seperator */
 $string['navbarsep'] = 'Navbar Separator';
@@ -272,6 +268,22 @@ $string['androiddesc'] = 'Prove a URL to your mobile App on the Google Play Stor
 
 $string['ios'] = 'iPhone/iPad (App Store)';
 $string['iosdesc'] = 'Prove a URL to your mobile App on the App Store.  If you do not have one of your own maybe consider linking to the free official Moodle Mobile app.';
+
+/* iOS Icons */
+$string['iosicon'] = 'iOS Homescreen Icons';
+$string['iosicondesc'] = 'The them does provide a default icon for iOS and android homescreens. You can upload your custom icons if you wish.';
+
+$string['iphoneicon'] = 'iPhone/iPod Touch Icon (Non Retina)';
+$string['iphoneicondesc'] = 'Icon should be a PNG files sized 57px by 57px';
+
+$string['iphoneretinaicon'] = 'iPhone/iPod Touch Icon (Retina)';
+$string['iphoneretinaicondesc'] = 'Icon should be a PNG files sized 114px by 114px';
+
+$string['ipadicon'] = 'iPad Icon (Non Retina)';
+$string['ipadicondesc'] = 'Icon should be a PNG files sized 72px by 72px';
+
+$string['ipadretinaicon'] = 'iPad Icon (Retina)';
+$string['ipadretinaicondesc'] = 'Icon should be a PNG files sized 144px by 144px';
 
 /* Google Analytics */
 $string['analyticsheading'] = 'Google Analytics';

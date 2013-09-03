@@ -42,13 +42,12 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
     
     // Include Awesome Font from Bootstrapcdn
-    //$name = 'theme_essential/bootstrapcdn';
-    //$title = get_string('bootstrapcdn', 'theme_essential');
-    //$description = get_string('bootstrapcdndesc', 'theme_essential');
-    //$default = false;
-    //$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    //$setting->set_updatedcallback('theme_reset_all_caches');
-    //$temp->add($setting);
+    $name = 'theme_essential/bootstrapcdn';
+    $title = get_string('bootstrapcdn', 'theme_essential');
+    $description = get_string('bootstrapcdndesc', 'theme_essential');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 	
     // Logo file setting.
     $name = 'theme_essential/logo';
@@ -78,10 +77,9 @@ defined('MOODLE_INTERNAL') || die;
     
     //Include the Editicons css rules
     $name = 'theme_essential/editicons';
-    $visiblename = get_string('editicons', 'theme_essential');
     $title = get_string('editicons', 'theme_essential');
     $description = get_string('editiconsdesc', 'theme_essential');
-    $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 1);
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $temp->add($setting);
     
     //Include the Autohide css rules
@@ -89,7 +87,7 @@ defined('MOODLE_INTERNAL') || die;
     $visiblename = get_string('autohide', 'theme_essential');
     $title = get_string('autohide', 'theme_essential');
     $description = get_string('autohidedesc', 'theme_essential');
-    $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 1);
+    $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 0);
     $temp->add($setting);
     
     // Performance Information Display.
@@ -839,6 +837,45 @@ defined('MOODLE_INTERNAL') || die;
     $description = get_string('iosdesc', 'theme_essential');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    //This is the descriptor for iOS Icons
+    $name = 'theme_essential/iosiconinfo';
+    $heading = get_string('iosicon', 'theme_essential');
+    $information = get_string('iosicondesc', 'theme_essential');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $temp->add($setting);
+    
+    // iPhone Icon.
+    $name = 'theme_essential/iphoneicon';
+    $title = get_string('iphoneicon', 'theme_essential');
+    $description = get_string('iphoneicondesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'iphoneicon');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // iPhone Retina Icon.
+    $name = 'theme_essential/iphoneretinaicon';
+    $title = get_string('iphoneretinaicon', 'theme_essential');
+    $description = get_string('iphoneretinaicondesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'iphoneretinaicon');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // iPad Icon.
+    $name = 'theme_essential/ipadicon';
+    $title = get_string('ipadicon', 'theme_essential');
+    $description = get_string('ipadicondesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'ipadicon');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // iPad Retina Icon.
+    $name = 'theme_essential/ipadretinaicon';
+    $title = get_string('ipadretinaicon', 'theme_essential');
+    $description = get_string('ipadretinaicondesc', 'theme_essential');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'ipadretinaicon');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     

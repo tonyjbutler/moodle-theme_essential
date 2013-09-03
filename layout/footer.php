@@ -23,44 +23,27 @@
  * @copyright 2013 Julian Ridden
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+ 
+$footerl = 'footer-left';
+$footerm = 'footer-middle';
+$footerr = 'footer-right';
 
 $hascopyright = (empty($PAGE->theme->settings->copyright)) ? false : $PAGE->theme->settings->copyright;
 $hasfootnote = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme->settings->footnote;
+$hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
+$hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-middle', $OUTPUT));
+$hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
+
 ?>
 	<div class="row-fluid">
-    	<!-- Widget 1 -->
-    	<div class="span4">
-    		<div id="footer-left" class="block-region">
-    			<div class="region-content">
-       			<?php if ($hasfooterleft) {
-            		echo $OUTPUT->blocks_for_region('footer-left');
-        		} ?>
-        		</div>
-        	</div>
-    	</div>
+		<?php
+            		echo $OUTPUT->essentialblocks($footerl, 'span4');
 
-    	<!-- widget 2 -->
-    	<div class="span4">
-    		<div id="footer-middle" class="block-region">
-    			<div class="region-content">
-       			<?php if ($hasfootermiddle) {
-            		echo $OUTPUT->blocks_for_region('footer-middle');
-        		} ?>
-        		</div>
-        	</div>
-    	</div>
+            		echo $OUTPUT->essentialblocks($footerm, 'span4');
 
-    	<!-- Widget 3 -->
-    	<div class="span4">
-    		<div id="footer-right" class="block-region">
-    			<div class="region-content">
-       			<?php if ($hasfooterright) {
-            		echo $OUTPUT->blocks_for_region('footer-right');
-        		} ?>
-        		</div>
-        	</div>
-    	</div>
-	</div>
+            		echo $OUTPUT->essentialblocks($footerr, 'span4');
+		?>
+ 	</div>
 
 	<div class="footerlinks row-fluid">
     	<hr>

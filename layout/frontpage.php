@@ -24,24 +24,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$hasheading = ($PAGE->heading);
-$hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
-$hasfooter = (empty($PAGE->layout_options['nofooter']));
-$hasheader = (empty($PAGE->layout_options['noheader']));
-
-$hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
-
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
-$hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
-$hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-middle', $OUTPUT));
-$hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
-
-$showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
-
-$showhiddendock = ($hashiddendock && !$PAGE->blocks->region_completely_docked('hidden-dock', $OUTPUT));
-$showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('footer-left', $OUTPUT));
-$showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
-$showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
 
 $hasslide1 = (!empty($PAGE->theme->settings->slide1));
 $hasslide1image = (!empty($PAGE->theme->settings->slide1image));
@@ -72,14 +55,6 @@ $alertsuccess = '<span class="icon-stack"><i class="icon-sign-blank icon-stack-b
 $hasmarketing1image = (!empty($PAGE->theme->settings->marketing1image));
 $hasmarketing2image = (!empty($PAGE->theme->settings->marketing2image));
 $hasmarketing3image = (!empty($PAGE->theme->settings->marketing3image));
-
-// If there can be a sidepost region on this page and we are editing, always
-// show it so blocks can be dragged into it.
-if ($PAGE->user_is_editing()) {
-    if ($PAGE->blocks->is_known_region('side-pre')) {
-        $showsidepre = true;
-    }
-}
 
 $haslogo = (!empty($PAGE->theme->settings->logo));
 
@@ -145,41 +120,34 @@ $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
-$courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
-
-if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
-    $courseheader = $OUTPUT->course_header();
-    $coursecontentheader = $OUTPUT->course_content_header();
-    if (empty($PAGE->layout_options['nocoursefooter'])) {
-        $coursecontentfooter = $OUTPUT->course_content_footer();
-        $coursefooter = $OUTPUT->course_footer();
-    }
+if (right_to_left()) {
+    $regionbsid = 'region-bs-main-and-post';
+} else {
+    $regionbsid = 'region-bs-main-and-pre';
 }
 
 echo $OUTPUT->doctype() ?>
-<html <?php echo $OUTPUT->htmlattributes() ?>>
+<html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
-    <title><?php echo $PAGE->title ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
-    <meta name="author" content="Site by Moodleman" /> 
+    <title><?php echo $OUTPUT->page_title(); ?></title>
+    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
     <link href='//fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <!-- iOS Homescreen Icons -->
+    <?php require_once(dirname(__FILE__).'/iosicons.php'); ?>
     <noscript>
 			<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/nojs.css" />
 	</noscript>
 </head>
 
-<body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
+<body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php if ($hasheader) {
-    require_once(dirname(__FILE__).'/header.php');
-}
-?>
+<?php require_once(dirname(__FILE__).'/header.php'); ?>
 
 <header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
@@ -195,7 +163,7 @@ echo $OUTPUT->doctype() ?>
                 echo $custommenu;
             } ?>
             <ul class="nav pull-right">
-            <li><?php echo $PAGE->headingmenu ?></li>
+            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
             <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
             </ul>
             </div>
@@ -397,41 +365,29 @@ echo $OUTPUT->doctype() ?>
 <?php } ?>
 
 <div id="page-content" class="row-fluid">
-        <div id="<?php echo $regionbsid ?>" class="span12">
-            <div class="row-fluid">
-                <section id="region-main" class="span8 desktop-first-column">
-                	<?php if ($hasnavbar) { ?>
-            			<nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
-            			<?php echo $OUTPUT->navbar(); ?>
-            		<?php }
-
-                    echo $OUTPUT->course_content_header();
-                    echo $OUTPUT->main_content();
-                    echo $OUTPUT->course_content_footer();
-                    ?>
+	<div id="<?php echo $regionbsid ?>" class="span12">
+		<div class="row-fluid">
+			<div id="region-main-essential" class="<?php echo $contentclass; ?>">
+				<section id="region-main" class="span8 desktop-first-column">
+				<?php
+				echo $OUTPUT->course_content_header();
+				echo $OUTPUT->main_content();
+				echo $OUTPUT->course_content_footer();
+				?>
                 </section>
-                <?php if ($hassidepre) { ?>
-                <div id="region-pre" class="block-region">
-                    <div class="region-content">
-                        <?php echo $OUTPUT->blocks('side-pre', 'span4 pull-right'); ?>
-                   </div>
-                </div>
-                 <?php } ?>
             </div>
-        </div>
-    </div>
+			<?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
+		</div>
+	</div>
+</div>
 
 <?php if (is_siteadmin()) { ?>
 <div class="hidden-blocks">
     <div class="row-fluid">
         <h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
-        <div id="hidden-dock" class="block-region">
-            <div class="region-content">
             <?php
-                echo $OUTPUT->blocks_for_region('hidden-dock');
+                echo $OUTPUT->essentialblocks('hidden-dock');
             ?>
-            </div>
-        </div>
     </div>
 </div>
 <?php } ?>
