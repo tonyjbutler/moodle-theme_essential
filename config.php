@@ -128,6 +128,24 @@ $THEME->layouts = array(
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-post',
     ),
+    
+    // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
+    'embedded' => array(
+        'file' => 'embedded.php',
+        'regions' => array()
+    ),
+    
+    // The pagelayout used when a redirection is occuring.
+    'redirect' => array(
+        'file' => 'embedded.php',
+        'regions' => array(),
+    ),
+    
+    // Pages that appear in pop-up windows - no navigation, no blocks, no header.
+    'popup' => array(
+        'file' => 'embedded.php',
+        'regions' => array(),
+    ),
 
 );
 
