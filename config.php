@@ -33,7 +33,7 @@ $THEME->name = 'essential';
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom', 'slides', 'lightbox', 'font-awesome');
+$THEME->sheets = array('slides', 'lightbox', 'font-awesome.min', 'essential', 'settings');
 $THEME->supportscssoptimisation = false;
 $THEME->enable_dock = false;
 $THEME->yuicssmodules = array();
@@ -50,103 +50,120 @@ $THEME->plugins_exclude_sheets = array(
 );
 
 $THEME->layouts = array(
-    // Most backwards compatible layout without the blocks - this is the layout used by default
-    'base' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
-    ),
     // Front page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'regions' => array('side-pre', 'home-left', 'home-middle', 'home-right', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'hidden-dock',
         'options' => array('nonavbar'=>true),
     ),
+    // Most backwards compatible layout without the blocks - this is the layout used by default.
+    'base' => array(
+        'file' => 'columns1.php',
+        'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'footer-right',
+    ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
-        'file' => 'general.php',
+        'file' => 'columns3.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'side-post',
     ),
-    // Course page.
+    // Main course page.
     'course' => array(
-        'file' => 'course.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'file' => 'columns3.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'side-post',
-         'options' => array('nonavbar'=>false),
+        'options' => array('langmenu'=>true),
     ),
-    // Page content and modules.
+    'coursecategory' => array(
+        'file' => 'columns3.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'side-post',
+    ),
+    // part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'file' => 'columns3.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'side-post',
     ),
-    // Category listing page.
-    	'coursecategory' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
+    // Server administration scripts.
+    'admin' => array(
+        'file' => 'columns2.php',
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
+        'defaultregion' => 'side-pre',
     ),
     // My dashboard page.
     'mydashboard' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'file' => 'columns3.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true),
     ),
     // My public page.
     'mypublic' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
+        'file' => 'columns3.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
         'defaultregion' => 'side-post',
-        'options' => array('langmenu'=>true),
     ),
-    // Public Login page.
     'login' => array(
-        'file' => 'login.php',
+        'file' => 'columns1.php',
         'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
-        'defaultregion' => 'hidden-dock',
+        'defaultregion' => 'footer-right',
         'options' => array('langmenu'=>true),
     ),
-    // Server administration scripts.
-    'admin' => array(
-        'file' => 'report.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+
+    // Pages that appear in pop-up windows - no navigation, no blocks, no header.
+    'popup' => array(
+        'file' => 'columns1.php',
+        'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'footer-right',
+        'options' => array('nofooter'=>true, 'nonavbar'=>true, 'noheader'=>true),
     ),
-    // Report Pages.
-    'report' => array(
-        'file' => 'report.php',
-        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+    // No blocks and minimal footer - used for legacy frame layouts only!
+    'frametop' => array(
+        'file' => 'columns1.php',
+        'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'footer-right',
+        'options' => array('nofooter'=>true, 'nocoursefooter'=>true),
     ),
-    
-    // Report Pages.
-    'maintenance' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
-    ),
-    
     // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
     'embedded' => array(
         'file' => 'embedded.php',
         'regions' => array()
     ),
-    
+    // Used during upgrade and install, and for the 'This site is undergoing maintenance' message.
+    // This must not have any blocks, links, or API calls that would lead to database or cache interaction.
+    // Please be extremely careful if you are modifying this layout.
+    'maintenance' => array(
+        'file' => 'maintenance.php',
+        'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'hidden-dock',
+    ),
+    // Should display the content and basic headers only.
+    'print' => array(
+        'file' => 'columns1.php',
+        'regions' => array('footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'footer-right',
+        'options' => array('nofooter'=>true, 'nonavbar'=>false),
+    ),
     // The pagelayout used when a redirection is occuring.
     'redirect' => array(
         'file' => 'embedded.php',
         'regions' => array(),
     ),
-    
-    // Pages that appear in pop-up windows - no navigation, no blocks, no header.
-    'popup' => array(
-        'file' => 'embedded.php',
-        'regions' => array(),
+    // The pagelayout used for reports.
+    'report' => array(
+        'file' => 'columns2.php',
+        'regions' => array('side-pre', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'side-pre',
     ),
-
+    // The pagelayout used for safebrowser and securewindow.
+    'secure' => array(
+        'file' => 'secure.php',
+        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right', 'hidden-dock'),
+        'defaultregion' => 'side-pre'
+    ),
 );
 
 $THEME->javascripts = array(
