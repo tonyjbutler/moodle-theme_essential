@@ -37,7 +37,6 @@
 /**
  * Include the Awesome Font.
  */
-
 function theme_essential_set_fontwww($css) {
     global $CFG, $PAGE;
     if(empty($CFG->themewww)){
@@ -49,7 +48,7 @@ function theme_essential_set_fontwww($css) {
     
     $theme = theme_config::load('essential');
     if (!empty($theme->settings->bootstrapcdn)) {
-    	$css = str_replace($tag, 'http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/', $css);
+    	$css = str_replace($tag, '//netdna.bootstrapcdn.com/font-awesome/4.0.0/fonts/', $css);
     } else {
     	$css = str_replace($tag, $themewww.'/essential/fonts/', $css);
     }
@@ -122,6 +121,20 @@ function theme_essential_pluginfile($course, $cm, $context, $filearea, $args, $f
         send_file_not_found();
     }
 }
+
+/**
+ * Set the width on the container-fluid div
+ *
+ * @param string $css
+ * @param mixed $pagewidth
+ * @return string
+ */
+    function essential_set_pagewidth($css, $pagewidth) {    $tag = '[[setting:pagewidth]]';    $replacement = $pagewidth;    if (is_null($replacement)) {        $replacement = '1200';    }
+    if ( $replacement == "100" ) {
+		$css = str_replace($tag, $replacement.'%', $css);
+	} else {
+		$css = str_replace($tag, $replacement.'px', $css);
+	}    return $css;    }
 
 /**
  * Displays the Font Awesome Edit Icons based on settings value
@@ -216,6 +229,8 @@ function essential_set_customcss($css, $customcss) {
 
 function theme_essential_process_css($css, $theme) {
 
+    if (!empty($theme->settings->pagewidth)) {       $pagewidth = $theme->settings->pagewidth;    } else {       $pagewidth = null;    }    $css = essential_set_pagewidth($css,$pagewidth);
+    
     // Set the Fonts.
     if ($theme->settings->fontselect ==1) {
         $headingfont = 'Oswald';
@@ -508,6 +523,7 @@ function theme_essential_process_css($css, $theme) {
     $css = theme_essential_set_marketingimage($css, $marketingimage, $setting);
 
     // Set the font path.
+
     $css = theme_essential_set_fontwww($css);
     return $css;
 }

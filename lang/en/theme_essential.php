@@ -51,7 +51,7 @@ $string['geneicsettings'] = 'General Settings';
 $string['autohide'] = 'Include Autohide Functionality';
 $string['autohidedesc'] = 'The Autohide functionality is designed to make Moodle less intimidating.  When editing is turned on edit icons only appear when the item is hovered over.';
 $string['editicons'] = 'Edit Icons V2';
-$string['editiconsdesc'] = 'This utilises the Font Awesome to display coloured and neater formatted edit icons in course pages and blocks.  Please note that currsently this is NOT compatible with Autohide.';
+$string['editiconsdesc'] = 'This utilises the Font Awesome to display coloured and neater formatted edit icons in course pages and blocks.  Please note that currently this is NOT compatible with Autohide.';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 $string['footnote'] = 'Footnote';
@@ -77,12 +77,25 @@ $string['headerprofilepic'] = 'Display user\'s picture';
 $string['headerprofilepicdesc'] = 'If checked, displays the user\'s profile picture in the header of the page.';
 $string['layout'] = 'Use a standard course layout';
 $string['layoutdesc'] = 'This theme is designed to put both block columns on the side.  If you prefer the standard Moodle course layout you can check this box and be returned to the boring old three column layout.';
+$string['frontpageblocks'] = 'Frontpage blocks alignment';
+$string['frontpageblocksdesc'] = 'Here you can determine if the blocks on the frontpage align to the left or the right.';
+$string['left'] = 'Left';
+$string['right'] = 'Right';
 $string['perfinfo'] = 'Performance Info Mode';
 $string['perfinfodesc'] = 'Many sites don\'t need the fully detailed performance info.  Especially when viewed by users.  When enabled, this shows a cleaned up miniminal form with basic page load information.';
 $string['perf_max'] = 'Detailed';
 $string['perf_min'] = 'Minimal';
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins';
 $string['backtotop'] = 'Back to top';
+$string['nextsection'] = 'Next Section';
+$string['previoussection'] = 'Previous Section';
+
+$string['pagewidth'] = 'Set Page Width';
+$string['pagewidthdesc'] = 'Choose from the list of availble page widths. for your site';
+$string['fixedwidthwide'] = 'Fixed Width - Wide';
+$string['fixedwidthnarrow'] = 'Fixed Width - Narrow';
+$string['variablewidth'] = 'Variable Width';
+
 
 $string['alwaysdisplay'] = 'Always Show';
 $string['displaybeforelogin'] = 'Show before login only';
@@ -160,9 +173,9 @@ $string['footerheadingcolordesc'] = 'Set the colour for block headings in the fo
 $string['pagebackground'] = 'Page Background Image';
 $string['pagebackgrounddesc'] = 'Upload your own background image.  This will be tiled in the background on all pages.  If none is uploaded a default image is used.';
 
-/* Frontpage Content */
-$string['frontcontentheading'] = 'Frontpage Content';
-$string['frontcontentheadingsub'] = 'Add information to your frontpage for users';
+/* Frontpage Settings */
+$string['frontcontentheading'] = 'Frontpage Settings';
+$string['frontcontentheadingsub'] = 'Change what features you wish enabled on your moodle front page';
 $string['frontcontentdesc'] = 'This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content';
 
 $string['usefrontcontent'] = 'Enable Frontpage content';
@@ -170,6 +183,9 @@ $string['usefrontcontentdesc'] = 'If enabled this will display the content of th
 
 $string['frontcontentarea'] = 'Frontpage Content';
 $string['frontcontentareadesc'] = 'Whatever is typed into this box will display across the full width of the page inbetween the Slideshow and the Marketing spots ';
+
+$string['frontpagemiddleblocks'] = 'Enable Frontpage Middle Blocks';
+$string['frontpagemiddleblocksdesc'] = 'If enabled this will display 3 new block locations just under the marketing spots';
 
 /* Slideshow */
 $string['slideshowheading'] = 'Frontpage Slideshow';
@@ -182,6 +198,12 @@ $string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the Slidesh
 $string['hideonphone'] = 'Slideshow on Mobiles';
 $string['hideonphonedesc'] = 'Choose if you wish to have the slideshow shown on mobiles or not';
 $string['readmore'] = 'Read More';
+
+$string['slideshowvariant'] = 'Slideshow Design';
+$string['slideshowvariantdesc'] = 'Choose the style of slidewhow you would like to display';
+$string['slideshow1'] = 'Design One';
+$string['slideshow2'] = 'Design Two';
+$string['slideshow3'] = 'Design Three';
 
 $string['slideshowTitle'] = 'Slideshow';
 $string['slideinfodesc'] = 'Enter the settings for your slide.';
