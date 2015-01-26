@@ -487,6 +487,8 @@ class core_renderer extends \core_renderer {
      * @return string $content
      */
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0) {
+        global $USER;
+
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -537,8 +539,10 @@ class core_renderer extends \core_renderer {
                 } else {
                     $url = '#';
                 }
-                $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title(),
-                    'class' => $class));
+                if (!($menunode->get_text() == 'Mahara' && strpos($USER->username, '@') !== false)) {
+                    $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title(),
+                            'class' => $class));
+                }
             }
             $content .= html_writer::end_tag('li');
         }
