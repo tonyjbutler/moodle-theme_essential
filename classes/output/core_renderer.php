@@ -167,7 +167,8 @@ class core_renderer extends \core_renderer {
     public function footer() {
         global $CFG;
 
-        $output = $this->container_end_all(true);
+        require_once($CFG->dirroot.'/blocks/navbuttons/footer.php');
+        $output = draw_navbuttons().$this->container_end_all(true);
 
         $footer = $this->opencontainers->pop('header/footer');
 
