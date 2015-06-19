@@ -68,5 +68,7 @@ require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/i
 
 <?php require_once(dirname(__FILE__) . $OUTPUT->get_child_relative_layout_path() . '/includes/footer.php'); ?>
 
+<?php require_once(dirname(__FILE__) . '/includes/additional-footer.php'); ?>
+
 </body>
 </html>

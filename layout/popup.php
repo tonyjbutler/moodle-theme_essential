@@ -55,6 +55,7 @@ echo $OUTPUT->doctype() ?>
             ?>
         </section>
     </div>
+</div>
 
     <footer id="page-footer" class="<?php echo $hideclass; ?>">
         <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
@@ -66,8 +67,9 @@ echo $OUTPUT->doctype() ?>
         ?>
     </footer>
 
+    <?php require_once(dirname(__FILE__).'/includes/additional-footer.php'); ?>
+
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
-</div>
 </body>
 </html>

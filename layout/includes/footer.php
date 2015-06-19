@@ -76,9 +76,6 @@ if (empty($PAGE->layout_options['nofooter'])) {
               echo "top: $('#page-header').height()";
               echo "}";
               echo "});";
-              if ($breadcrumbstyle == '1') {
-                  echo "$('.breadcrumb').jBreadCrumb();";
-              }
             }
             if (theme_essential_get_setting('fitvids')) {
                 echo "$('#page').fitVids();";

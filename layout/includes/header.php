@@ -34,6 +34,14 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>"/>
     <?php echo $OUTPUT->get_csswww(); ?>
     <?php echo $OUTPUT->standard_head_html(); ?>
+    <!--   <script type="text/javascript">
+        //<![CDATA[
+        if (window.innerWidth < 980) {
+            // some code
+            document.write('<meta name="viewport" content="width=device-width,  initial-scale=1.0" />');
+        }
+        //]]>
+    </script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
     <?php require_once(dirname(__FILE__) . '/fonts.php'); ?>
@@ -47,6 +55,7 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
+
 
 <header role="banner">
     <div id="page-header" class="clearfix<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?>">
@@ -81,6 +90,7 @@ echo $OUTPUT->doctype() ?>
                             <p id="socialheading"><?php echo get_string('socialnetworks', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
                                 <?php
+                                /* */
                                 echo $OUTPUT->render_social_network('googleplus');
                                 echo $OUTPUT->render_social_network('twitter');
                                 echo $OUTPUT->render_social_network('facebook');
@@ -92,6 +102,7 @@ echo $OUTPUT->doctype() ?>
                                 echo $OUTPUT->render_social_network('vk');
                                 echo $OUTPUT->render_social_network('skype');
                                 echo $OUTPUT->render_social_network('website');
+                                
                                 ?>
                             </ul>
                         </div>
@@ -103,11 +114,12 @@ echo $OUTPUT->doctype() ?>
                         <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>" id="mobileapps">
                             <p id="socialheading"><?php echo get_string('mobileappsheading', 'theme_essential') ?></p>
                             <ul class="socials unstyled">
-                                <?php
+                                <?php /* */
                                 echo $OUTPUT->render_social_network('ios');
                                 echo $OUTPUT->render_social_network('android');
                                 echo $OUTPUT->render_social_network('winphone');
                                 echo $OUTPUT->render_social_network('windows');
+                               
                                 ?>
                             </ul>
                         </div>
@@ -132,6 +144,9 @@ echo $OUTPUT->doctype() ?>
                         </a>
                         <?php echo theme_essential_get_title('navbar'); ?>
                     <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
+                        <div id="custom_menu_courses">
+                            <?php echo $OUTPUT->custom_menu_courses(); ?>
+                        </div>
                         <div class="usermenu">
                             <?php echo $OUTPUT->custom_menu_user(); ?>
                         </div>
@@ -145,9 +160,6 @@ echo $OUTPUT->doctype() ?>
                         <div class="nav-collapse collapse pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                             <div id="custom_menu_language">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>
-                            </div>
-                            <div id="custom_menu_courses">
-                                <?php echo $OUTPUT->custom_menu_courses(); ?>
                             </div>
                             <?php if ($colourswitcher) { ?>
                                 <div id="custom_menu_themecolours">

@@ -46,6 +46,8 @@ if ((get_config('theme_essential', 'enablealternativethemecolors1')) ||
     $THEME->sheets[] = 'alternative';
 }
 
+$THEME->sheets[] = 'fonts27';
+
 $THEME->sheets[] = 'custom';
 
 $THEME->supportscssoptimisation = false;

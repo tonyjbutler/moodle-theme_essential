@@ -84,7 +84,8 @@ class theme_essential_core_renderer extends core_renderer {
     {
         global $CFG;
 
-        $output = $this->container_end_all(true);
+        require_once($CFG->dirroot.'/blocks/navbuttons/footer.php');
+        $output = draw_navbuttons().$this->container_end_all(true);
 
         $footer = $this->opencontainers->pop('header/footer');
 
@@ -149,6 +150,7 @@ class theme_essential_core_renderer extends core_renderer {
      */
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0)
     {
+        global $USER;
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -190,7 +192,9 @@ class theme_essential_core_renderer extends core_renderer {
             } else {
                 $url = '#';
             }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
+            if (!($menunode->get_text() == 'Mahara' && strpos($USER->username, '@') !== false)) {
+                $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
+            }
         }
         return $content;
     }

@@ -1,4 +1,18 @@
 /**
+ * Overrides for mod_aspirelist and mod_questionnaire added by Tony.
+ *
+ * PLEASE DO NOT REMOVE!
+ */
+#page-mod-aspirelist-view ul.sectionitems li.listitem, div.aspirelistbox ul.sectionitems li.listitem {
+    line-height: inherit;
+    background-image: none;
+    padding: 6px 0;
+}
+#page-mod-questionnaire-complete td.notanswered, #page-mod-questionnaire-preview td.notanswered {
+    visibility: hidden;
+}
+
+/**
  * Custom CSS
  * This is the very last piece of CSS loaded, so if something looks weird,
  * try removing your custom CSS from the theme settings page.
@@ -9,3 +23,329 @@
 [[setting:fontfilesheading]]
 
 [[setting:fontfilesbody]]
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* STYLE ONLY
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/*  GLOBAL ------------------------------------------------------------------------------------------ */
+	body,p {font-size: 14px;font-family:Arial, Helvetica, sans-serif;}
+	a{/*font-weight:bold;*/}
+	/*.course-content ul li.section.main,
+	.bor {background:none;}*/
+
+
+
+/* 0. HEADINGS/TEXT STYLE ------------------------------------------------------------------------------------------ */
+	  h1,h2,h3{font-weight: normal;letter-spacing: -0.04em;line-height: 1em;}
+	  h1 , h2 {font-size: 2.4923em;}
+	  h1 , h2, #block-region-content .block h2 { font-family: 'LexiaLight',Arial,Helvetica,sans-serif;color: #b5121b;}
+	  #block-region-content .block h2{font-size: 2.4923em;}
+	  h1#title {display:none;}
+	  .socials p, #socialheading,
+	  h2.title a,.block .header .title h2,h3{font-family: 'EffraLight',Arial,Helvetica,sans-serif;}
+	  /* course */
+	  .path-course .course-content h3.sectionname{font-family: 'EffraRegular',Arial,Helvetica,sans-serif;color:#000;}
+	  /* blocks */
+	  .block .header .title {border-bottom: 0px solid #eee;}
+	  .block .header .title h2, .block h3.main { text-transform: capitalize;}
+	  .block .header .title h2, .block h3.main,
+	  #block-region-content .block h2.title {font-size: 1.7923em;}
+	  .block .header .title h2:before {font-size: 1.0923em;display:none;}
+	  /* Navbar brand */
+	  .navbar .brand {display:none;}
+
+/*	1. PAGE LAYOUT --------------------------------------------------------------------------------------------- */
+	  #page-site-index #page #page-content #region-main{border: 0px solid #e3e3e3;}
+  
+
+ /* 1b. LANCS Navbar STYLE -----------------------------------------------------------------  */
+		
+
+/*  1c. Custom Menu STYLE ----------------------------------------------------------------- */
+
+		.navbar .brand,
+		#custom_menu,
+		#custom_menu ul,
+		#custom_menu ul li,
+		#custom_menu ul li a{font-family: "EffraLight",Arial,Helvetica,sans-serif;}
+		#custom_menu ul li a{font-size: 1.5923em;}
+ 		#custom_menu ul li a[title="Moodle"]{background-color:#DA1621;font-family: "EffraRegular",Arial,Helvetica,sans-serif;display:inline-block;}
+		 #custom_menu ul li a:hover,
+		 #custom_menu ul li a[title="Moodle"]:hover{background-color:#EE342B;color:#fff;}
+
+/* 2. PAGE HEADER STYLE ------------------------------------------------------------------------------------------ */
+	 #page-header {background: none;background-color:#eee;padding: 0 .5em;border-bottom: 0px solid #ddd;}
+	 a.logo{/*min-height: 92px;*/}
+	  .navbar{background-color: transparent;border:0px 0px;}
+	 .navbar-inner {background-color: #4b4b4b!important;background-color: #b5121b!important;border:0px 0px;
+	 list-style-type: none;font-weight:normal;line-height: 1.5294em;}
+	 .nav-collapse {border: 0px solid #4b4b4b;background-color: #4b4b4b;background-color: #b5121b;}
+	 
+	 
+
+/* 3. LEFT NAV STYLE ------------------------------------------------------------------------------------------ */
+	  #block-region-side-pre{border:0px;border-bottom: 1px solid #eaeaea;border-right: 1px solid #eaeaea;border-top: 1px solid #eaeaea; }
+	  #block-region-side-pre .block_navigation .block_tree ul li ,
+	  #block-region-side-pre .block_settings .block_tree ul li  {border-top:1px solid #eaeaea;padding-bottom: 0.25em;
+	    padding-top: 0.25em;}
+	  #block-region-side-pre hr{display:none}
+
+
+/* 4. BLOCKS STYLE ------------------------------------------------------------------------------------------------ */
+	.block {border: 0px solid #e1e1e1;box-shadow: 0 0px 0px rgba(0, 0, 0, 0) inset;}
+	#block-region-side-post .block{background-color: #f3f3f3;}
+	/* content blocks */
+	#block-region-content .block{border-top:0px solid #eaeaea;-moz-border-radius:0px 0px 0px 0px;-o-border-radius:0px 0px 0px 0px;
+		-webkit-border-radius:0px 0px 0px 0px;-ms-border-radius:0px 0px 0px 0px;border-radius:0px 0px 0px 0px;}
+
+/* 5. FOOTERS STYLE -------------------------------------------------------------------------------------------------------------------------------------------- */
+	/* helplink */
+	#page-footer .helplink a,
+	#page-footer .footerlinks .helplink a  {color: white !important;}
+
+	/* Footer */
+	#lancs-footer{background-repeat:repeat-x;font-weight:normal;font-size:.7em;color:#fff;}
+	#page-footer .footnote a,#page-footer .footnote a:visited,
+	#lancs-footer a,#lancs-footer a:link,#lancs-footer a:visited,#lancs-footer a:hover,#lancs-footer a:active {font-weight:bold;text-decoration: none;color:#fff !important}
+	#lancs-footer a:hover{text-decoration: none;color:#000}
+	.lancs-footer-list-div{border-right:1px dotted #eb4438;}
+	.lancs-footer-list  dt{font-size:1.2em;font-weight:normal;}
+	.lancs-footer-list  dt.sbs{white-space:nowrap;}
+	.lancs-footer-list  dt.fheading{font-family: 'EffraRegular',Arial,Helvetica,sans-serif;font-size: 1.3538em;}
+	#lancs-footer-list-1 dl dd{font-size:1.2em;}
+	#lancs-footer-list-2,#lancs-footer-list-6 {border:0px}
+	#lancs-footer-list-3 dl label{color:transparent}
+	#lancs-footer-list-6 dl.lancs-footer-list dd a:link,#lancs-footer-list-6 dl.lancs-footer-list dd a:visited,
+	#lancs-footer-list-6 dl.lancs-footer-list dd a:hover,#lancs-footer-list-6 dl.lancs-footer-list dd a:active{font-weight:normal}
+	#lancs-footer #lancs-footer-list-3 dl dl.sbs-submenu a{font-weight: normal;}
+
+	/* Additional Footer */
+	#additional-footer{background-color:#000;background-repeat:repeat-x;font-weight:bold;color:#fff;}
+	#additional-footer a:link,#additional-footer a:visited,#additional-footer a:hover,#additional-footer a:active {text-decoration: none;color:#fff}
+	#additional-footer-list-right{font-weight: normal;}
+	/* for screens above 900px */
+	 @media only screen and (min-width: 900px) {
+        #lancs-footer{font-size:.88em;}
+      }
+
+
+/* 6. BUTTONS STYLE ------------------------------------------------------------------------------------------------- */
+	.btn-primary,input.form-submit, input#id_submitbutton, 
+	input#id_submitbutton2, .path-admin .buttons input[type="submit"], td.submit input,
+	.btn-primary:hover,input.form-submit:hover, input#id_submitbutton:hover, 
+	input#id_submitbutton2:hover, .path-admin .buttons input[type="submit"]:hover, td.submit input:hover {
+    background-color: #b5121b;
+    background-image: linear-gradient(to bottom, #e62f20, #bd2519);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);}
+
+/* 7. ROUNDED CORNERS STYLE ------------------------------------------------------------------------------------------------- */
+
+    .block {-moz-border-radius: 0px 0px 35px 0px;
+			-webkit-border-radius: 0px 0px 35px 0px;
+			-o-border-radius: 0px 0px 35px 0px;
+			-ms-border-radius: 0px 0px 35px 0px;
+			border-radius: 0px 0px 35px 0px;}
+
+	.navbar .navbar-inner {-moz-border-radius: 0px 0px 25px 0px;
+			-webkit-border-radius: 0px 0px 25px 0px;
+			-o-border-radius: 0px 0px 25px 0px;
+			-ms-border-radius: 0px 0px 25px 0px;
+			border-radius: 0px 0px 25px 0px;}
+
+	#block-region-side-pre{-moz-border-radius: 0px 6px 35px 0px;
+			-webkit-border-radius: 0px 6px 35px 0px;
+			-o-border-radius: 0px 6px 35px 0px;
+			-ms-border-radius: 0px 6px 35px 0px;
+			border-radius: 0px 6px 35px 0px;}
+
+/* 8. Carousel STYLE--------------------------------------------------------------------------------------------------------------- */
+	/* caption box */
+	#essentialCarousel.carousel .carousel-inner .carousel-caption {background-color: #ac2319;background-color: #eee;}
+	#essentialCarousel.carousel .carousel-indicators li {background-color:#aaa}
+	#essentialCarousel.carousel .carousel-indicators li.active {background-color:#777}
+	/* font */
+	.carousel-caption h4,
+	#essentialCarousel.carousel .carousel-inner .carousel-caption h4{font-family: Arial,Helvetica,sans-serif}
+	#essentialCarousel.carousel .carousel-inner .carousel-caption h4, #essentialCarousel.carousel .carousel-inner .carousel-caption p {
+    color: #333;font-weight:normal;}
+
+    /* 9. DOCK ----------------------------------------------------------------------------------------------------------- */
+    body.has_dock #dock .dockedtitle h2 {font-size: 16px !important;}
+
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* LAYOUTS ONLY
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+  	
+
+/*  1. NAVBAR LAYOUT----------------------------------------------------------------- */
+	.navbar{position: static;/**/max-width:1400px;margin:0 auto;margin-top: -1em} 
+	.navbar.oldnavbar .navbar-inner{margin-top:-1em;padding-top:.5em;}
+	#custom_menu{margin-left: -10px;}
+	#page-header {height:auto;margin-top:0;padding-bottom:1em;}
+	#page-header a.logo {height: 85px;margin: 15px 0;}
+
+	.navbar .navbar-inner #custom_menu_courses,
+		.navbar .navbar-inner #messagemenu,
+		.navbar .navbar-inner .messagemenu,
+		.navbar .navbar-inner #usermenu,
+		.navbar .navbar-inner .usermenu {display:inline-block;float:left;} 
+
+	.navbar	.navbar-inner #custom_menu_courses .nav li.dropdown ul.dropdown-menu {min-width:320px;max-width:320px;}
+	.navbar	.navbar-inner #custom_menu_courses .nav li.dropdown ul.dropdown-menu li a {white-space: normal;padding-left:35px;color: #000;}
+	.navbar	.navbar-inner #custom_menu_courses .nav li.dropdown ul.dropdown-menu li a i.fa {margin-left:-25px;}
+
+
+
+/*  2. PAGE LAYOUT----------------------------------------------------------------- */
+
+	 #page.container-fluid {padding-left: 0;padding-right: 0;} 
+	 #page #page-content #region-main, #page #page-content div[role="main"] {padding: 2px 20px;}
+
+/*  3. LANCS FOOTER LAYOUT----------------------------------------------------------------- */
+	#page-footer {margin-top:2em;}
+	#page-footer hr {display:none;}
+	#page-footer .footnote {width: 100%;margin-left: 0px;}
+
+   /* Footer */
+	.lancs-footer{min-width:100%;height:auto;padding-bottom:4em}
+	.lancs-footer-lists-wrapper{padding:0;padding-top:2em;padding-right:0%;}
+	.lancs-footer-list-div{float:left;height:15em;padding-left: 4%;width: 20.75%;}
+	.lancs-footer-list-div.first {padding-left: 0;width: 24.75%;}
+	.lancs-footer-list{text-align: left;margin-top:0em;}
+	.lancs-footer-list dd{margin-bottom:.5em;margin-left:0em;}
+	.lancs-footer-list-1 dl dd{font-size:1.2em;}
+	.lancs-footer-list-2 dl dd,.lancs-footer-list-3 dl dd,.lancs-footer-list-4 dl dd,.lancs-footer-list-5 dl dd,
+	.lancs-footer-list-6 dl dd{position:relative;top:1em}
+	.lancs-footer-list-4 dl dd{padding-left:2em}
+	.lancs-footer-list-4 dl dt.connect{padding-left:0em}
+	.lancs-footer-list-6 dl.lancs-footer-list {text-align: right;}
+	.lancs-footer .lancs-footer-list-3 dl dl.sbs-submenu , .ie7 .lancs-footer .lancs-footer-list-3 dl dl.sbs-submenu , 
+	.ie8 .lancs-footer .lancs-footer-list-3 dl dl.sbs-submenu , .ie9 .lancs-footer #lancs-footer-list-3 dl dl.sbs-submenu  {position: relative;top: -1em;}
+	
+	/* Additional Footer */
+	#additional-footer{height:49px;}
+	#additional-footer-list-left{float:left;}
+	#additional-footer-list-right dd{margin-left:0;}
+	#additional-footer-list-left dd, dl#additional-footer-list-right dd{display:inline-block;margin-left:0;}
+	#additional-footer-list-left dd{margin-right:2em;}
+	#additional-footer-list-right{float:right;}
+
+/* 4. BLOCKS LAYOUT ------------------------------------------------------------------------------------------------ */
+	#block-region-side-pre{padding-top:1em;}
+	#block-region-content .block{padding-top:1.5em;}
+
+/* 5. EDITING layout ------------------------------------------------------------------------------------------------- */
+	.editing .section .activity .activityinstance {padding-right: 100px;}
+
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* LAYOUT MEDIA QUERIES
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+@media only screen and (max-width: 1600px) {
+
+	/*  1. LANCS Navbar LAYOUT----------------------------------------------------------------- */
+		#menu-joiner.menu-joiner{display:none;}
+
+
+}
+
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* MOBILES STYLES ONLY
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+@media only screen and (max-width: 1200px) {
+		.navbar .navbar-inner {-moz-border-radius: 0px 0px 0px 0px;
+			-webkit-border-radius: 0px 0px 0px 0px;
+			-o-border-radius: 0px 0px 0px 0px;
+			-ms-border-radius: 0px 0px 0px 0px;
+			border-radius: 0px 0px 0px 0px;}
+
+	}
+
+@media only screen and (max-width: 979px) {
+
+	/* 1. LEFT NAV STYLE ------------------------------------------------------------------------------------------ */
+	  #block-region-side-pre{border:0px;border-bottom: 0px solid #eaeaea;border-right: 0px solid #eaeaea }
+	}
+
+
+
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* MOBILES LAYOUT ONLY
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+@media only screen and (max-width: 979px) {
+	
+	/*  1. PAGE HEADER LAYOUT------------------------------------------------------------------------------------------ */
+		#profilepic {display:none;}
+		/* Navbar brand */
+	  	.navbar .brand {display:inline-block;}
+	  	#page-header a.logo {height: 70px;margin:7px 0px;}
+
+		/* custom menu */
+		.navbar-inner .custommenus {max-width: 100%;width:100%;}
+		#custom_menu{font-size:1em;font-family: Arial,Helvetica, snas-serif;}
+		#custom_menu ul li:nth-child(2),
+		#custom_menu ul li a[title="Moodle"]{display:none;}		
+		.navbar-inner .nav-collapse .nav  li {float: none;border-top:1px dotted #ddd;}
+		
+		#custom_menu,
+		.navbar .navbar-inner #custom_menu_courses,
+		.navbar .navbar-inner #messagemenu,
+		.navbar .navbar-inner .messagemenu,
+		.navbar .navbar-inner #usermenu,
+		.navbar .navbar-inner .usermenu {display:block;float:none;margin-left: 4.5em;min-width:240px;}
+		.navbar .navbar-inner .usermenu ul.nav ul.dropdown-menu,
+		.navbar .navbar-inner .messagemenu ul.nav ul.dropdown-menu {position:relative;left:0em;right:auto;}
+		.navbar-inner .nav-collapse .dropdown-menu {position:static;
+														/* fix for My Modules dropdown on a small screen */
+														float:none;}
+
+		.navbar .navbar-inner .nav  li.dropdown ul.dropdown-menu  li  a:hover, 
+		.navbar .navbar-inner .nav  li.dropdown ul.dropdown-menu  li  a.open {background-color:#333;}
+
+		/* fix for My Modules dropdown on a small screen */
+		.navbar .navbar-inner #custom_menu_courses ul.nav ul.dropdown-menu{position:relative;top:0em}
+
+		
+		
+}
+
+@media only screen and (max-width: 767px) {
+
+	/* 1. PAGE HEADER LAYOUT------------------------------------------------------------------------------------------ */
+	.navbar{border-bottom:1px solid #4b4b4b}
+	#page-header a.logo {height: 55px;}
+	
+	/* 2. FOOTER LAYOUT ------------------------------------------------------------------------------------------------------- */
+	.footerblocks{display:none;}
+	.lancs-footer-list-2,
+	.lancs-footer-list-3{display:none;}
+	.lancs-footer-list-1.lancs-footer-list-div.first,.lancs-footer-list-6 {width: 43%;margin-left:2%;}
+	.lancs-footer-list-6.lancs-footer-list-div{border-right:0px;}
+}
+
+@media only screen and (max-width: 479px) {	
+	
+	/*  1. PAGE HEADER LAYOUT------------------------------------------------------------------------------------------ */
+	#page-header a.logo {height: 45px;}
+
+}
+
+
+
+ 
+ 

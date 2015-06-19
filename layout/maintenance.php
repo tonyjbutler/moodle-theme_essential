@@ -77,6 +77,7 @@ echo $OUTPUT->doctype() ?>
         </div>
     </div>
 </footer>
+<?php require_once(dirname(__FILE__).'/includes/additional-footer.php'); ?>
 
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
 </body>

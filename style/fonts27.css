@@ -1,0 +1,50 @@
+
+
+@font-face {font-family: 'EffraRegular';
+	src: url([[font:theme|effra_std_rg_0-webfont.eot]]);
+	src: url([[font:theme|effra_std_rg_0-webfont.eot?#iefix]]) format('embedded-opentype'),
+		url([[font:theme|effra_std_rg_0-webfont.woff]]) format('woff'),
+		url([[font:theme|effra_std_rg_0-webfont.ttf]]) format('truetype'),
+		url([[font:theme|effra_std_rg_0-webfont.svg#EffraRegular]]) format('svg');
+	font-weight: normal;
+	font-style: normal;}
+	
+
+@font-face {font-family: 'EffraBold';
+	src: url([[font:theme|effra_std_0-webfont.eot]]);
+	src: url([[font:theme|effra_std_0-webfont.eot?#iefix]]) format('embedded-opentype'),
+		url([[font:theme|effra_std_0-webfont.woff]]) format('woff'),
+		url([[font:theme|effra_std_0-webfont.ttf]]) format('truetype'),
+		url([[font:theme|effra_std_0-webfont.svg#EffraBold]]) format('svg');
+	font-weight: normal;
+	font-style: normal;}
+	
+
+@font-face {font-family: 'EffraLight';
+src: url([[font:theme|effra_std_lt_0-webfont.eot]]);
+src: url([[font:theme|effra_std_lt_0-webfont.eot?#iefix]]) format('embedded-opentype'),
+	url([[font:theme|effra_std_lt_0-webfont.woff]]) format('woff'),
+	url([[font:theme|effra_std_lt_0-webfont.ttf]]) format('truetype'),
+	url([[font:theme|effra_std_lt_0-webfont.svg#EffraLight]]) format('svg');
+font-weight: normal;
+font-style: normal;}
+
+
+@font-face {font-family: 'LexiaBold';
+src: url([[font:theme|lexia_std-webfont.eot]]);
+src: url([[font:theme|lexia_std-webfont.eot?#iefix]]) format('embedded-opentype'),
+	url([[font:theme|lexia_std-webfont.woff]]) format('woff'),
+	url([[font:theme|lexia_std-webfont.ttf]]) format('truetype'),
+	url([[font:theme|lexia_std-webfont.svg#LexiaBold]]) format('svg');
+font-weight: normal;
+font-style: normal;}
+
+
+@font-face {font-family: 'LexiaLight';
+src: url([[font:theme|lexia_std_lt-webfont.eot]]);
+src: url([[font:theme|lexia_std_lt-webfont.eot?#iefix]]) format('embedded-opentype'),
+	url([[font:theme|lexia_std_lt-webfont.woff]]) format('woff'),
+	url([[font:theme|lexia_std_lt-webfont.ttf]]) format('truetype'),
+	url([[font:theme|lexia_std_lt-webfont.svg#LexiaLight]]) format('svg');
+	font-weight: normal;
+	font-style: normal;}
