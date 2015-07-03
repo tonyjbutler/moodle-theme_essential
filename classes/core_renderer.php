@@ -855,6 +855,93 @@ class theme_essential_core_renderer extends core_renderer {
         $preferences .= html_writer::link(new moodle_url('#'), $label, array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
         $preferences .= html_writer::start_tag('ul', array('class' => 'dropdown-menu'));
 
+        // Fetch custom user menu items from site config.
+        $customitems = user_convert_text_to_menu_items($CFG->customusermenuitems, $this->page);
+        foreach ($customitems as $item) {
+            // Skip item if it's invalid.
+            if ($item->itemtype == 'invalid') {
+                continue;
+            }
+            // Output divider if required.
+            if ($item->itemtype == 'divider') {
+                $preferences .= html_writer::empty_tag('hr', array('class' => 'sep'));
+                continue;
+            }
+            // Process link, using an appropriate Font Awesome icon where feasible (custom pix are ignored).
+            $branchurl = new moodle_url($item->url);
+            $branchpath = str_replace($CFG->wwwroot, '', $branchurl->out());
+            // Try to figure out an appropriate icon to use.
+            if (preg_match('|^/([a-z]+)/|', $branchpath, $component) !== 1) {
+                $component[1] = '';
+            }
+            switch ($component[1]) {
+                case 'badges':
+                    if (!$CFG->enablebadges) {
+                        continue 2;
+                    }
+                    if ($branchpath == '/badges/preferences.php' && !has_capability('moodle/badges:manageownbadges', $context)) {
+                        continue 2;
+                    }
+                    $branchlabel = '<em><i class="fa fa-certificate"></i>' . $item->title . '</em>';
+                    break;
+                case 'blog':
+                    if (!$CFG->enableblogs) {
+                        continue 2;
+                    }
+                    $branchlabel = '<em><i class="fa fa-rss-square"></i>' . $item->title . '</em>';
+                    break;
+                case 'grade':
+                    $branchlabel = '<em><i class="fa fa-list-alt"></i>' . $item->title . '</em>';
+                    break;
+                case 'login':
+                    if ($branchpath == '/login/change_password.php' && !has_capability('moodle/user:changeownpassword', $context)) {
+                        continue 2;
+                    }
+                    $branchlabel = '<em><i class="fa fa-key"></i>' . $item->title . '</em>';
+                    break;
+                case 'message':
+                    if ($branchpath == '/message/edit.php' && !has_capability('moodle/user:editownmessageprofile', $context)) {
+                        continue 2;
+                    }
+                    if ($branchpath == '/message/index.php') {
+                        if (empty($CFG->messaging)) {
+                            continue 2;
+                        }
+                        $branchlabel = '<em><i class="fa fa-envelope"></i>' . $item->title . '</em>';
+                    } else {
+                        $branchlabel = '<em><i class="fa fa-comments"></i>' . $item->title . '</em>';
+                    }
+                    break;
+                case 'user':
+                    if ($branchpath == '/user/edit.php' && !has_capability('moodle/user:editownprofile', $context)) {
+                        continue 2;
+                    }
+                    switch ($branchpath) {
+                        case '/user/editor.php':
+                            $branchlabel = '<em><i class="fa fa-edit"></i>' . $item->title . '</em>';
+                            break;
+                        case '/user/forum.php':
+                            $branchlabel = '<em><i class="fa fa-list"></i>' . $item->title . '</em>';
+                            break;
+                        case '/user/language.php':
+                            $branchlabel = '<em><i class="fa fa-language"></i>' . $item->title . '</em>';
+                            break;
+                        case '/user/managetoken.php':
+                            $branchlabel = '<em><i class="fa fa-key"></i>' . $item->title . '</em>';
+                            break;
+                        case '/user/preferences.php':
+                            $branchlabel = '<em><i class="fa fa-cog"></i>' . $item->title . '</em>';
+                            break;
+                        default:
+                            $branchlabel = '<em><i class="fa fa-user"></i>' . $item->title . '</em>';
+                    }
+                    break;
+                default:
+                    $branchlabel = '<em><i class="fa fa-cog"></i>' . $item->title . '</em>';
+            }
+            $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+        }
+
         $branchlabel = '<em><i class="fa fa-user"></i>' . get_string('user', 'moodle') . '</em>';
         $branchurl = new moodle_url('/user/preferences.php', array('userid' => $USER->id));
         $preferences .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
