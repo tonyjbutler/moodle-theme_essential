@@ -135,6 +135,12 @@ echo $OUTPUT->doctype();
                         </a>
                         <?php echo $OUTPUT->get_title('navbar'); ?>
                     <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
+                        <div id="custom_menu_courses">
+                            <?php echo $OUTPUT->custom_menu_courses(); ?>
+                        </div>
+                        <div id="custom_menu_activitystream">
+                            <?php echo $OUTPUT->custom_menu_activitystream(); ?>
+                        </div>
                         <div class="usermenu">
                             <?php echo $OUTPUT->custom_menu_user(); ?>
                         </div>
@@ -149,9 +155,6 @@ echo $OUTPUT->doctype();
                             <div id="custom_menu_language">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>
                             </div>
-                            <div id="custom_menu_courses">
-                                <?php echo $OUTPUT->custom_menu_courses(); ?>
-                            </div>
                             <?php if ($colourswitcher) { ?>
                                 <div id="custom_menu_themecolours">
                                     <?php echo $OUTPUT->custom_menu_themecolours(); ?>
@@ -159,9 +162,6 @@ echo $OUTPUT->doctype();
                             <?php } ?>
                             <div id="custom_menu">
                                 <?php echo $OUTPUT->custom_menu(); ?>
-                            </div>
-                            <div id="custom_menu_activitystream">
-                                <?php echo $OUTPUT->custom_menu_activitystream(); ?>
                             </div>
                         </div>
                     </div>
