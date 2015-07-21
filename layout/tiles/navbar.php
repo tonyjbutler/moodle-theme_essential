@@ -37,7 +37,6 @@ defined('MOODLE_INTERNAL') || die;
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
                         </a>
                         <?php echo $OUTPUT->get_title('navbar'); ?>
                     <div class="pull-right">
@@ -59,15 +58,21 @@ defined('MOODLE_INTERNAL') || die;
                             <?php echo $OUTPUT->search_box(); ?>
                         </div>
                     </div>
-                        <div id='essentialmenus' class="nav-collapse collapse pull-left">
+                        <div id='essentialmenus' class="nav-collapse collapse">
+                            <div class="pull-right">
+                                <?php echo $OUTPUT->custom_menu_activitystream(); ?>
+                            </div>
+                            <div class="pull-right">
+                                <?php echo $OUTPUT->custom_menu_courses(); ?>
+                            </div>
+                            <div class="pull-left">
+                                <?php echo $OUTPUT->custom_menu_language(); ?>
+                            </div>
                             <?php
-                            echo $OUTPUT->custom_menu_language();
-                            echo $OUTPUT->custom_menu_courses();
                             if ($colourswitcher) {
                                 echo $OUTPUT->custom_menu_themecolours();
                             }
                             echo $OUTPUT->custom_menu();
-                            echo $OUTPUT->custom_menu_activitystream();
                             ?>
                         </div>
                     </div>
