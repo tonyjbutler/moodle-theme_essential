@@ -518,7 +518,7 @@ class core_renderer extends \core_renderer {
                 $content .= $this->getfontawesomemarkup('caret-right');
             }
             $content .= '</a>';
-            $content .= '<ul class="dropdown-menu">';
+            $content .= '<ul class="dropdown-menu pull-right">';
             foreach ($menunode->get_children() as $menunode) {
                 $content .= $this->render_custom_menu_item($menunode, 0);
             }
