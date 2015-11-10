@@ -57,7 +57,7 @@ define(['jquery', 'core/log'], function($, log) {
 
             var $allVideos = $(this).find(selectors.join(','));
             $allVideos = $allVideos.not("object object"); // SwfObj conflict patch
-            $allVideos = $allVideos.not("object[type='application/pdf'"); // Ignore embedded PDFs.
+            $allVideos = $allVideos.not("object[type='application/pdf']"); // Ignore embedded PDFs.
             $allVideos = $allVideos.not(ignoreList); // Disable FitVids on this video.
 
             $allVideos.each(function(){
