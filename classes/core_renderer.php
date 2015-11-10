@@ -175,7 +175,7 @@ class theme_essential_core_renderer extends core_renderer {
                 $content .= '<i class="fa fa-caret-right"></i>';
             }
             $content .= '</a>';
-            $content .= '<ul class="dropdown-menu">';
+            $content .= '<ul class="dropdown-menu pull-right">';
             foreach ($menunode->get_children() as $menunode) {
                 $content .= $this->render_custom_menu_item($menunode, 0);
             }
