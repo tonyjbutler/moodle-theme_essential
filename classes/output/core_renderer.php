@@ -539,9 +539,9 @@ class core_renderer extends \core_renderer {
                 } else {
                     $url = '#';
                 }
-                if (!($menunode->get_text() == 'Mahara' && strpos($USER->username, '@') !== false)) {
-                    $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title(),
-                            'class' => $class));
+                if (!($menunode->get_text() == 'Mahara' && (!empty($USER->username) && strpos($USER->username, '@') !== false))) {
+                    $content .= html_writer::link($url, $menunode->get_text(),
+                            array('title' => $menunode->get_title(), 'class' => $class));
                 }
             }
             $content .= html_writer::end_tag('li');
