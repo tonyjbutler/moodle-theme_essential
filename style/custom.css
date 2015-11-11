@@ -51,7 +51,7 @@ body a.back-to-top i.fa-angle-up:hover {
 }
 @media (min-width: 980px) {
     .navbar .navbar-inner #custom_menu li a {
-        font-size: 1.25em;
+        font-size: 1.4em;
     }
 }
 .navbar .navbar-inner .messagemenu {
