@@ -48,12 +48,13 @@ body a.back-to-top i.fa-angle-up:hover {
 .navbar {
     position: absolute;
 }
-.navbar .navbar-inner #custom_menu {
+.navbar .navbar-inner #custom_menu li a {
     font-family: EffraLight;
+    font-weight: bold;
 }
 @media (min-width: 980px) {
-    .navbar .navbar-inner #custom_menu {
-        font-size: 1.25em;
+    .navbar .navbar-inner #custom_menu li a {
+        font-size: 1.4em;
     }
 }
 .navbar .navbar-inner .messagemenu {
