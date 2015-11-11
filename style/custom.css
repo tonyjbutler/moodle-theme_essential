@@ -229,18 +229,9 @@ body a.back-to-top i.fa-angle-up:hover {
     color: #999;
 }
 
-/* mod_aspirelist */
-#page-mod-aspirelist-view ul.sectionitems li.listitem,
-div.aspirelistbox ul.sectionitems li.listitem {
-    line-height: inherit;
-    background-image: none;
-    padding: 6px 0;
-}
-
-/* mod_questionnaire */
-#page-mod-questionnaire-complete td.notanswered,
-#page-mod-questionnaire-preview td.notanswered {
-    visibility: hidden;
+/* Fix RSS block borders */
+.block_rss_client .list li, .block_rss_client .list li:first-child {
+    border-top: 1px dotted #E1E1E1;
 }
 
 /* Fix checkbox right margin */
@@ -256,6 +247,20 @@ input[type="checkbox"] {
 /* Fix for groups/members boxes overlapping */
 #groupeditform .groups select, #groupeditform .members select {
     max-width: 98%;
+}
+
+/* mod_aspirelist */
+#page-mod-aspirelist-view ul.sectionitems li.listitem,
+div.aspirelistbox ul.sectionitems li.listitem {
+    line-height: inherit;
+    background-image: none;
+    padding: 6px 0;
+}
+
+/* mod_questionnaire */
+#page-mod-questionnaire-complete td.notanswered,
+#page-mod-questionnaire-preview td.notanswered {
+    visibility: hidden;
 }
 
 [[setting:fontfilesheading]]
