@@ -67,6 +67,9 @@ body a.back-to-top i.fa-angle-up:hover {
 /* Footer */
 #page-footer {
     font-size: 0.9em;
+    position: relative;
+    border-bottom: none;
+    padding-bottom: 60px;
 }
 #page-footer .footerlinks .helplink a {
     color: #fff !important;
@@ -74,6 +77,9 @@ body a.back-to-top i.fa-angle-up:hover {
 #page-footer .footerlinks .helplink a:hover,
 #page-footer .footerlinks .helplink a:focus {
     color: #888 !important;
+}
+#page-footer .themecredit {
+    display: none;
 }
 #page-footer .footerlinks .helplink a .fa-question-circle:before {
     margin: 0 5px;
@@ -98,8 +104,8 @@ body a.back-to-top i.fa-angle-up:hover {
     background-color: #282828;
     position: absolute;
     left: 0;
+    bottom: 0;
     width: 100%;
-    margin: 20px 0 0;
 }
 #additional-footer .additional-footer-lists-wrapper {
     width: 96%;
@@ -112,9 +118,6 @@ body a.back-to-top i.fa-angle-up:hover {
 #additional-footer dd.additional-footer-list-item {
     display: inline-flex;
     margin: 0 10px;
-}
-.themecredit {
-    display: none;
 }
 
 /* Blocks */
