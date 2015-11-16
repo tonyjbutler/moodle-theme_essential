@@ -9,6 +9,14 @@
     width: 96%;
     max-width: 1280px;
 }
+#page #page-content #region-main,
+#page #page-content div[role=main],
+.pagelayout-redirect #page-content #region-main,
+.pagelayout-redirect #page-content div[role=main] {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
 body a.back-to-top i.fa-angle-up {
     color: #fff;
 }
@@ -113,7 +121,7 @@ body a.back-to-top i.fa-angle-up:hover {
     margin: 0 auto;
 }
 #additional-footer dl {
-    margin: 8px 0 4px;
+    margin: 12px 0 6px;
 }
 #additional-footer dd.additional-footer-list-item {
     display: inline-flex;
@@ -227,6 +235,30 @@ body a.back-to-top i.fa-angle-up:hover {
 .block_admin_bookmarks p.tree_item.leaf a:hover>i.fa,
 .block_admin_bookmarks p.tree_item.leaf a:focus>i.fa {
     color: #999;
+}
+.block_course_overview .coursebox {
+    margin: 15px 0;
+    padding: 5px;
+}
+
+/* Course */
+body .course-content ul.topics li.section,
+body .course-content ul.weeks li.section {
+    border: 1px solid #e3e3e3;
+    border-radius: 6px 6px 35px 6px;
+    background: none;
+    margin: 0 0 20px;
+    padding: 0;
+}
+body .course-content ul.topics li.section.hidden,
+body .course-content ul.weeks li.section.hidden {
+    background: url([[pix:theme|bg/hidden-bg]]);
+}
+.path-course-view .completionprogress {
+    float: none;
+}
+.bor {
+    display: none;
 }
 
 /* Fix RSS block borders */
