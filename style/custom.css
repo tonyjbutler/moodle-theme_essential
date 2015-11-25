@@ -35,20 +35,35 @@ body a.back-to-top i.fa-angle-up:hover {
     height: 300px;
     background-position: 0 100%;
 }
+@media (max-width: 1199px) {
+    #page-header a.logo {
+        margin: -190px 0 0;
+    }
+}
+@media (max-width: 991px) {
+    #page-header a.logo {
+        margin: -210px 0 0;
+    }
+}
 @media (max-width: 767px) {
     #page-header a.logo {
-        margin: -200px 0 0;
+        margin: -200px 10px 0;
+    }
+}
+@media (max-width: 600px) {
+    #page-header a.logo {
+        margin: -220px 10px 0;
     }
 }
 @media (max-width: 480px) {
     #page-header a.logo {
-        margin: -220px 0 0;
+        margin: -240px 10px 0;
     }
 }
-@media (max-width: 400px) {
-    #page-header a.logo {
-        margin: -240px 0 0;
-    }
+#page-header a[data-target="#essentialicons"],
+#page-header #mobileapps,
+#page-header #socialnetworks {
+    display: none;
 }
 .navbar {
     position: absolute;
@@ -67,6 +82,51 @@ body a.back-to-top i.fa-angle-up:hover {
 }
 .navbar .navbar-inner .nav>li> a i {
     color: inherit;
+}
+nav[role=navigation] .coursesearch {
+    width: 96%;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    white-space: nowrap;
+}
+nav[role=navigation] .coursesearch #coursesearchnavbar {
+    position: absolute;
+    bottom: 25px;
+    right: 5px;
+}
+@media (max-width: 1199px) {
+    nav[role=navigation] .coursesearch #coursesearchnavbar {
+        bottom: 20px;
+    }
+}
+@media (max-width: 991px) {
+    nav[role=navigation] .coursesearch #coursesearchnavbar {
+        bottom: 10px;
+    }
+}
+@media (max-width: 767px) {
+    nav[role=navigation] .coursesearch #coursesearchnavbar {
+        display: none;
+    }
+}
+nav[role=navigation] .coursesearch #coursesearchnavbar label {
+    display: block;
+}
+nav[role=navigation] .coursesearch #coursesearchnavbar input[type="text"] {
+    width: 200px;
+    height: 23px;
+}
+nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
+    background: url([[pix:theme|search]]) no-repeat;
+    color: transparent;
+    border: none;
+    border-radius: 0;
+    margin-left: -4px;
+    width: 43px;
+    height: 33px;
+    text-shadow: none;
+    box-shadow: none;
 }
 .breadcrumb-button input[type="submit"]:hover {
     color: #fff;
