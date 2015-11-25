@@ -79,4 +79,9 @@ defined('MOODLE_INTERNAL') || die;
                 </div>
             </div>
         </div>
+        <?php
+        // Course search.
+        $courserenderer = $PAGE->get_renderer('core', 'course');
+        echo $OUTPUT->box($courserenderer->course_search_form('', 'navbar'), 'coursesearch');
+        ?>
     </nav>
