@@ -30,6 +30,9 @@ body a.back-to-top i.fa-angle-up:hover {
     background-repeat: repeat-y;
     border-bottom-color: #e2e2e2;
 }
+#page-header div.pull-left {
+    width: 60%;
+}
 #page-header a.logo {
     margin: -180px 0 0;
     height: 300px;
@@ -46,6 +49,9 @@ body a.back-to-top i.fa-angle-up:hover {
     }
 }
 @media (max-width: 767px) {
+    #page-header div.pull-left {
+        width: 90%;
+    }
     #page-header a.logo {
         margin: -200px 10px 0;
     }
@@ -56,8 +62,16 @@ body a.back-to-top i.fa-angle-up:hover {
     }
 }
 @media (max-width: 480px) {
+    #page-header div.pull-left {
+        width: 80%;
+    }
     #page-header a.logo {
         margin: -240px 10px 0;
+    }
+}
+@media (max-width: 400px) {
+    #page-header a.logo {
+        margin: -250px 10px 0;
     }
 }
 #page-header a[data-target="#essentialicons"],
