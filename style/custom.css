@@ -161,7 +161,7 @@ nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
 }
 #page-footer .footerlinks .helplink a:hover,
 #page-footer .footerlinks .helplink a:focus {
-    color: #888 !important;
+    color: #bbb !important;
 }
 #page-footer .themecredit {
     display: none;
@@ -183,7 +183,15 @@ nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
 }
 .lancs-footer-list-2, .lancs-footer-list-6 {
     width: 20%;
-    border-left: 1px dotted #eb4438;
+    border-left: 1px dotted #bbb;
+}
+@media (max-width: 767px) {
+    .lancs-footer-list-div {
+        display: block;
+        width: 100% !important;
+        padding-left: 0 !important;
+        border-left: none !important;
+    }
 }
 #additional-footer {
     background-color: #282828;
@@ -198,7 +206,7 @@ nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
     margin: 0 auto;
 }
 #additional-footer dl {
-    margin: 12px 0 6px;
+    margin: 12px 0 8px;
 }
 #additional-footer dd.additional-footer-list-item {
     display: inline-flex;
