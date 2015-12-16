@@ -217,11 +217,48 @@ nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
 .block {
     border-radius: 6px 6px 35px 6px;
 }
-.block .header h2 {
+.block_navigation {
+    background-color: #676767;
+}
+.block_navigation .header .title h2,
+.block_settings .header .title h2,
+.block_admin_bookmarks .header .title h2 {
+    font-weight: bold;
     text-shadow: none;
 }
-.block_navigation, .block_settings, .block_admin_bookmarks {
-    background-color: #676767;
+.block_navigation .header .title h2:before,
+.block_settings .header .title h2:before,
+.block_admin_bookmarks .header .title h2:before {
+    font-weight: normal;
+}
+.block_navigation .header .title h2,
+.block_navigation .header .title h2:before,
+.block_navigation .moodle-core-dragdrop-draghandle:before,
+.block_navigation .menubar .icon,
+.block_navigation .content h3.main,
+.block_navigation .content a,
+.block_navigation .content a:visited,
+.block_navigation .content p.tree_item.branch,
+.block_navigation .content p.tree_item.branch:before,
+.block_navigation .content p.tree_item.leaf a,
+.block_navigation .content p.tree_item.leaf a>i.fa {
+    color: #eee;
+}
+.block_navigation .moodle-core-dragdrop-draghandle:hover:before,
+.block_navigation .moodle-core-dragdrop-draghandle:focus:before,
+.block_navigation .menubar .icon:hover,
+.block_navigation .menubar .icon:focus,
+.block_navigation .content a:hover,
+.block_navigation .content a:focus,
+.block_navigation .content p.tree_item.branch:hover,
+.block_navigation .content p.tree_item.branch:focus,
+.block_navigation .content p.tree_item.branch:hover:before,
+.block_navigation .content p.tree_item.branch:focus:before,
+.block_navigation .content p.tree_item.leaf a:hover,
+.block_navigation .content p.tree_item.leaf a:focus,
+.block_navigation .content p.tree_item.leaf a:hover>i.fa,
+.block_navigation .content p.tree_item.leaf a:focus>i.fa {
+    color: #999;
 }
 .block_navigation .block_tree {
     margin: 5px;
@@ -237,88 +274,65 @@ nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
 .block_settings .block_tree .tree_item {
     padding-left: initial;
 }
-.block_navigation .icon,
-.block_navigation .moodle-core-dragdrop-draghandle:before,
-.block_navigation .header .title h2,
-.block_navigation h3.main,
-.block_navigation .header .title h2:before,
-.block_navigation a,
-.block_navigation a:visited,
-.block_navigation p.tree_item.branch,
-.block_navigation p.tree_item.branch:before,
-.block_navigation p.tree_item.leaf a,
-.block_navigation p.tree_item.leaf a>i.fa {
-    color: #eee;
+.block_settings, .block_admin_bookmarks {
+    background-color: #b5121b;
 }
-.block_navigation .icon:hover,
-.block_navigation .icon:focus,
-.block_navigation .moodle-core-dragdrop-draghandle:hover:before,
-.block_navigation .moodle-core-dragdrop-draghandle:focus:before,
-.block_navigation a:hover,
-.block_navigation p.tree_item.branch:hover,
-.block_navigation p.tree_item.branch:focus,
-.block_navigation p.tree_item.branch:hover:before,
-.block_navigation p.tree_item.branch:focus:before,
-.block_navigation p.tree_item.leaf a:hover,
-.block_navigation p.tree_item.leaf a:focus,
-.block_navigation p.tree_item.leaf a:hover>i.fa,
-.block_navigation p.tree_item.leaf a:focus>i.fa {
-    color: #999;
-}
-.block_settings .icon,
-.block_settings .moodle-core-dragdrop-draghandle:before,
 .block_settings .header .title h2,
-.block_settings h3.main,
 .block_settings .header .title h2:before,
-.block_settings a,
-.block_settings a:visited,
-.block_settings p.tree_item.branch,
-.block_settings p.tree_item.branch:before,
-.block_settings p.tree_item.leaf a,
-.block_settings p.tree_item.leaf a>i.fa {
+.block_settings .moodle-core-dragdrop-draghandle:before,
+.block_settings .menubar .icon,
+.block_settings .content h3.main,
+.block_settings .content a,
+.block_settings .content a:visited,
+.block_settings .content p.tree_item.branch,
+.block_settings .content p.tree_item.branch:before,
+.block_settings .content p.tree_item.leaf a,
+.block_settings .content p.tree_item.leaf a>i.fa {
     color: #eee;
 }
-.block_settings .icon:hover,
-.block_settings .icon:focus,
 .block_settings .moodle-core-dragdrop-draghandle:hover:before,
 .block_settings .moodle-core-dragdrop-draghandle:focus:before,
-.block_settings a:hover,
-.block_settings p.tree_item.branch:hover,
-.block_settings p.tree_item.branch:focus,
-.block_settings p.tree_item.branch:hover:before,
-.block_settings p.tree_item.branch:focus:before,
-.block_settings p.tree_item.leaf a:hover,
-.block_settings p.tree_item.leaf a:focus,
-.block_settings p.tree_item.leaf a:hover>i.fa,
-.block_settings p.tree_item.leaf a:focus>i.fa {
+.block_settings .menubar .icon:hover,
+.block_settings .menubar .icon:focus,
+.block_settings .content a:hover,
+.block_settings .content a:focus,
+.block_settings .content p.tree_item.branch:hover,
+.block_settings .content p.tree_item.branch:focus,
+.block_settings .content p.tree_item.branch:hover:before,
+.block_settings .content p.tree_item.branch:focus:before,
+.block_settings .content p.tree_item.leaf a:hover,
+.block_settings .content p.tree_item.leaf a:focus,
+.block_settings .content p.tree_item.leaf a:hover>i.fa,
+.block_settings .content p.tree_item.leaf a:focus>i.fa {
     color: #999;
 }
-.block_admin_bookmarks .icon,
-.block_admin_bookmarks .moodle-core-dragdrop-draghandle:before,
 .block_admin_bookmarks .header .title h2,
-.block_admin_bookmarks h3.main,
 .block_admin_bookmarks .header .title h2:before,
-.block_admin_bookmarks a,
-.block_admin_bookmarks a:visited,
-.block_admin_bookmarks p.tree_item.branch,
-.block_admin_bookmarks p.tree_item.branch:before,
-.block_admin_bookmarks p.tree_item.leaf a,
-.block_admin_bookmarks p.tree_item.leaf a>i.fa {
+.block_admin_bookmarks .moodle-core-dragdrop-draghandle:before,
+.block_admin_bookmarks .menubar .icon,
+.block_admin_bookmarks .content h3.main,
+.block_admin_bookmarks .content a,
+.block_admin_bookmarks .content a:visited,
+.block_admin_bookmarks .content p.tree_item.branch,
+.block_admin_bookmarks .content p.tree_item.branch:before,
+.block_admin_bookmarks .content p.tree_item.leaf a,
+.block_admin_bookmarks .content p.tree_item.leaf a>i.fa {
     color: #eee;
 }
-.block_admin_bookmarks .icon:hover,
-.block_admin_bookmarks .icon:focus,
 .block_admin_bookmarks .moodle-core-dragdrop-draghandle:hover:before,
 .block_admin_bookmarks .moodle-core-dragdrop-draghandle:focus:before,
-.block_admin_bookmarks a:hover,
-.block_admin_bookmarks p.tree_item.branch:hover,
-.block_admin_bookmarks p.tree_item.branch:focus,
-.block_admin_bookmarks p.tree_item.branch:hover:before,
-.block_admin_bookmarks p.tree_item.branch:focus:before,
-.block_admin_bookmarks p.tree_item.leaf a:hover,
-.block_admin_bookmarks p.tree_item.leaf a:focus,
-.block_admin_bookmarks p.tree_item.leaf a:hover>i.fa,
-.block_admin_bookmarks p.tree_item.leaf a:focus>i.fa {
+.block_admin_bookmarks .menubar .icon:hover,
+.block_admin_bookmarks .menubar .icon:focus,
+.block_admin_bookmarks .content a:hover,
+.block_admin_bookmarks .content a:focus,
+.block_admin_bookmarks .content p.tree_item.branch:hover,
+.block_admin_bookmarks .content p.tree_item.branch:focus,
+.block_admin_bookmarks .content p.tree_item.branch:hover:before,
+.block_admin_bookmarks .content p.tree_item.branch:focus:before,
+.block_admin_bookmarks .content p.tree_item.leaf a:hover,
+.block_admin_bookmarks .content p.tree_item.leaf a:focus,
+.block_admin_bookmarks .content p.tree_item.leaf a:hover>i.fa,
+.block_admin_bookmarks .content p.tree_item.leaf a:focus>i.fa {
     color: #999;
 }
 .block_course_overview .coursebox {
