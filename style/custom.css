@@ -26,6 +26,12 @@ body a.back-to-top i.fa-angle-up {
 body a.back-to-top i.fa-angle-up:hover {
     color: #555;
 }
+div#fullscreenfloat.fullscreen {
+    top: auto;
+}
+h1, h2, h3 {
+    line-height: normal;
+}
 
 /* Header */
 #page-header {
@@ -154,6 +160,7 @@ nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
     font-size: 0.9em;
     position: relative;
     border-bottom: none;
+    margin: 10px 0 0;
     padding-bottom: 60px;
 }
 #page-footer .footerlinks .helplink a {
@@ -346,12 +353,25 @@ body .course-content ul.weeks li.section {
     border: 1px solid #e3e3e3;
     border-radius: 6px 6px 35px 6px;
     background: none;
-    margin: 0 0 20px;
-    padding: 0;
+    margin: 5px 0 20px;
+    padding: 10px 0 5px;
 }
 body .course-content ul.topics li.section.hidden,
 body .course-content ul.weeks li.section.hidden {
     background: url([[pix:theme|bg/hidden-bg]]);
+}
+.course-content ul li.section .content>div,
+.course-content ul li.section .section-modchooser {
+    margin: auto 20px;
+}
+.course-content ul li.section.hidden .content>div {
+    margin-left: 25px;
+}
+.course-content ul li.section.hidden .activity .activityinstance {
+    margin-left: auto;
+}
+.activity img.activityicon {
+    vertical-align: middle;
 }
 .path-course-view .completionprogress {
     float: none;
@@ -396,6 +416,7 @@ input[type="checkbox"] {
 #dndupload-status {
     display: inherit;
     z-index: 999;
+    top: 50px;
 }
 
 /* mod_aspirelist */
