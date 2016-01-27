@@ -359,6 +359,18 @@ body .course-content ul.weeks li.section.hidden {
 .bor {
     display: none;
 }
+.content .availabilityinfo {
+    background-color: #FCF8E3;
+    border: solid 1px #FBEED5;
+    border-radius: 4px;
+    moz-border-radius: 4px;
+    ms-border-radius: 4px;
+    webkit-border-radius: 4px;
+    color: #C09853;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    text-shadow: rgba(255, 255, 255, 0.498039) 0px 1px 0px;
+}
 
 /* Fix RSS block borders */
 .block_rss_client .list li, .block_rss_client .list li:first-child {
@@ -378,6 +390,12 @@ input[type="checkbox"] {
 /* Fix for groups/members boxes overlapping */
 #groupeditform .groups select, #groupeditform .members select {
     max-width: 98%;
+}
+
+/* Fix for missing drag and drop upload message */
+#dndupload-status {
+    display: inherit;
+    z-index: 999;
 }
 
 /* mod_aspirelist */
