@@ -167,6 +167,18 @@ nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
 #page-footer .footerlinks .helplink a:focus {
     color: #bbb !important;
 }
+#page-footer .footerperformance {
+    margin-top: 20px;
+}
+#page-footer .performanceinfo {
+    color: #282828;
+    background: #eee;
+    width: 96%;
+    margin: 5px auto;
+}
+#page-footer .purgecaches {
+    margin: 10px 20px;
+}
 #page-footer .themecredit {
     display: none;
 }
