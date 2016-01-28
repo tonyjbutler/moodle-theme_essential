@@ -396,7 +396,13 @@ body .course-content ul.weeks li.section.hidden {
     text-shadow: rgba(255, 255, 255, 0.498039) 0px 1px 0px;
 }
 
-/* Fix RSS block borders */
+/* Fix RSS block spacing and borders */
+.block_rss_client .content {
+    padding: 4px 0;
+}
+.block_rss_client .content li {
+    margin: 5px 0;
+}
 .block_rss_client .list li, .block_rss_client .list li:first-child {
     border-top: 1px dotted #E1E1E1;
 }
