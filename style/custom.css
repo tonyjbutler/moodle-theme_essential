@@ -221,6 +221,10 @@ nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
 .block {
     border-radius: 6px 6px 35px 6px;
 }
+.block .header .title h2:before,
+.block.block_iconic_html .header .title h2 span.fa:before {
+    vertical-align: top;
+}
 .block_navigation {
     background-color: #676767;
 }
