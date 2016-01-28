@@ -283,7 +283,7 @@ nav[role=navigation] .coursesearch #coursesearchnavbar input[type="submit"] {
 }
 .block_navigation .block_tree .tree_item.branch,
 .block_settings .block_tree .tree_item {
-    padding-left: initial;
+    padding-left: inherit;
 }
 .block_settings, .block_admin_bookmarks {
     background-color: #b5121b;
@@ -421,6 +421,20 @@ input[type="checkbox"] {
     display: inherit;
     z-index: 999;
     top: 50px;
+}
+
+/* Fix spacing and alignment in forum posts */
+.forumpost {
+    padding: 2px 5px;
+}
+.forumpost .subject {
+    margin-bottom: -2px;
+}
+.forumpost .picture img.userpicture {
+    margin-left: 2px;
+}
+.forumpost .content .posting.fullpost {
+    margin-top: auto;
 }
 
 /* mod_aspirelist */
