@@ -32,4 +32,6 @@ $plugin->maturity = MATURITY_STABLE; // This version's maturity level.
 $plugin->release = '2.9.1.3 (Build: 2015062413)';
 $plugin->requires  = 2015051100.00; // 2.9 (Build: 20150511).
 $plugin->component = 'theme_essential';
-$plugin->dependencies = array();
+$plugin->dependencies = array(
+    'local_lutermdates' => ANY_VERSION
+);
