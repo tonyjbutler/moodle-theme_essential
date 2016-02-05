@@ -1326,6 +1326,10 @@ class core_renderer extends \core_renderer {
      * @return string Current academic week name.
      */
     public function week_name() {
+        global $CFG;
+
+        require_once($CFG->dirroot . '/local/lutermdates/lib.php');
+
         $weekname = local_lutermdates_get_week_name();
         $html = html_writer::span($weekname, 'weekname');
 
