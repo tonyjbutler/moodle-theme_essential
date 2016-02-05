@@ -97,7 +97,22 @@ h1, h2, h3 {
         font-size: 1.4em;
     }
 }
-.navbar .navbar-inner .messagemenu {
+.navbar .navbar-inner #weekname {
+    margin: 20px;
+    color: #fff;
+}
+@media (max-width: 400px) {
+    .navbar .navbar-inner #weekname {
+        margin: 20px 10px;
+    }
+}
+@media (min-width: 980px) and (max-width: 1179px) {
+    .navbar .navbar-inner #weekname {
+        display: none;
+    }
+}
+.navbar .navbar-inner .messagemenu,
+.navbar .navbar-inner .gotobottommenu {
     display: none !important;
 }
 .navbar .navbar-inner .nav>li> a i {
