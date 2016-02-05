@@ -58,6 +58,11 @@ defined('MOODLE_INTERNAL') || die;
                             <?php echo $OUTPUT->search_box(); ?>
                         </div>
                     </div>
+                        <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
+                            <div id="weekname">
+                                <?php echo $OUTPUT->week_name(); ?>
+                            </div>
+                        </div>
                         <div id='essentialmenus' class="nav-collapse collapse">
                             <div class="pull-right">
                                 <?php echo $OUTPUT->custom_menu_activitystream(); ?>
