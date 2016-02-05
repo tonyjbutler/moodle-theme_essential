@@ -637,6 +637,18 @@ class theme_essential_core_renderer extends core_renderer {
     }
 
     /**
+     * Outputs the official name of the current academic week.
+     *
+     * @return string Current academic week name.
+     */
+    public function week_name() {
+        $weekname = local_lutermdates_get_week_name();
+        $html = html_writer::span($weekname, 'weekname');
+
+        return $html;
+    }
+
+    /**
      * Outputs the goto bottom menu.
      * @return custom_menu object
      */
