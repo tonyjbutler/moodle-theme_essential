@@ -40,6 +40,9 @@ defined('MOODLE_INTERNAL') || die;
                         </a>
                         <?php echo $OUTPUT->get_title('navbar'); ?>
                     <div class="pull-right">
+                        <?php echo $OUTPUT->custom_menu_week_name(); ?>
+                        <?php echo $OUTPUT->custom_menu_activitystream(); ?>
+                        <?php echo $OUTPUT->custom_menu_courses(); ?>
                         <div class="usermenu navbarrightitem">
                             <?php echo $OUTPUT->custom_menu_user(); ?>
                         </div>
@@ -58,18 +61,7 @@ defined('MOODLE_INTERNAL') || die;
                             <?php echo $OUTPUT->search_box(); ?>
                         </div>
                     </div>
-                        <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
-                            <div id="weekname">
-                                <?php echo $OUTPUT->week_name(); ?>
-                            </div>
-                        </div>
                         <div id='essentialmenus' class="nav-collapse collapse">
-                            <div class="pull-right">
-                                <?php echo $OUTPUT->custom_menu_activitystream(); ?>
-                            </div>
-                            <div class="pull-right">
-                                <?php echo $OUTPUT->custom_menu_courses(); ?>
-                            </div>
                             <div class="pull-left">
                                 <?php echo $OUTPUT->custom_menu_language(); ?>
                             </div>
@@ -78,6 +70,9 @@ defined('MOODLE_INTERNAL') || die;
                                 echo $OUTPUT->custom_menu_themecolours();
                             }
                             echo $OUTPUT->custom_menu();
+                            // Course search for custom menu.
+                            $courserenderer = $PAGE->get_renderer('core', 'course');
+                            echo $OUTPUT->box($courserenderer->course_search_form('', 'short'), 'coursesearch');
                             ?>
                         </div>
                     </div>
@@ -85,8 +80,8 @@ defined('MOODLE_INTERNAL') || die;
             </div>
         </div>
         <?php
-        // Course search.
+        // Course search for main header.
         $courserenderer = $PAGE->get_renderer('core', 'course');
-        echo $OUTPUT->box($courserenderer->course_search_form('', 'navbar'), 'coursesearch');
+        echo $OUTPUT->box($courserenderer->course_search_form(), 'coursesearch');
         ?>
     </nav>
