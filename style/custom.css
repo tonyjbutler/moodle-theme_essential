@@ -227,6 +227,12 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
     font-weight: bold;
     color: #fff;
 }
+.breadcrumb-nav {
+    width: auto;
+}
+.breadcrumb-nav ul.breadcrumb {
+    width: inherit !important;
+}
 .breadcrumb-button input[type="submit"]:hover {
     color: #fff;
 }
