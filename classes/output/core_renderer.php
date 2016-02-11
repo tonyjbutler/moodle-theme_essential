@@ -604,8 +604,8 @@ class core_renderer extends \core_renderer {
             } else {
                 $branchtitle = get_string('mycourses', 'theme_essential');
             }
-            $branchlabel = $this->getfontawesomemarkup('briefcase').$branchtitle;
-            $branchurl = new moodle_url('');
+            $branchlabel = $this->getfontawesomemarkup('briefcase') . html_writer::span($branchtitle, 'nav-title');
+            $branchurl = new moodle_url('#');
             $branchsort = 200;
 
             $branch = $coursemenu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
@@ -699,7 +699,7 @@ class core_renderer extends \core_renderer {
                 ((!empty($this->page->course->id) && $this->page->course->id > 1))) {
                 $activitystreammenu = new custom_menu();
                 $branchtitle = get_string('thiscourse', 'theme_essential');
-                $branchlabel = $this->getfontawesomemarkup('book').$branchtitle;
+                $branchlabel = $this->getfontawesomemarkup('book') . html_writer::span($branchtitle, 'nav-title');
                 $branchurl = new moodle_url('#');
                 $branch = $activitystreammenu->add($branchlabel, $branchurl, $branchtitle, 10002);
                 $branchtitle = get_string('people', 'theme_essential');
@@ -997,17 +997,27 @@ class core_renderer extends \core_renderer {
     }
 
     /**
-     * Outputs the official name of the current academic week.
+     * Outputs the name of the current academic week with a link to the timetable.
      *
-     * @return string Current academic week name.
+     * @return string Current academic week name with timetable link.
      */
-    public function week_name() {
-        global $CFG;
+    public function custom_menu_week_name() {
+        global $CFG, $USER;
+
+        if (empty($USER->id)) {
+            return '';
+        }
 
         require_once($CFG->dirroot . '/local/lutermdates/lib.php');
-
         $weekname = local_lutermdates_get_week_name();
-        $html = html_writer::span($weekname, 'weekname');
+
+        $icon = html_writer::tag('i', '', array('class' => 'fa fa-calendar'));
+        $title = html_writer::span($weekname, 'nav-title');
+        $link = new moodle_url('https://portal.lancaster.ac.uk/student_portal#timetable');
+
+        $menu = new custom_menu();
+        $menu->add($icon . $title, $link, $weekname);
+        $html = $this->render_custom_menu($menu);
 
         return $html;
     }
