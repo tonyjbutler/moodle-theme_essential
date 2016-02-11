@@ -134,32 +134,26 @@ echo $OUTPUT->doctype();
                         </a>
                         <?php echo $OUTPUT->get_title('navbar'); ?>
                         <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
-                            <div class="gotobottommenu">
-                                <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
+                            <div id="custom_menu_week_name">
+                                <?php echo $OUTPUT->custom_menu_week_name(); ?>
                             </div>
-                            <div class="messagemenu">
-                                <?php echo $OUTPUT->custom_menu_messages(); ?>
+                            <div id="custom_menu_activitystream">
+                                <?php echo $OUTPUT->custom_menu_activitystream(); ?>
+                            </div>
+                            <div id="custom_menu_courses">
+                                <?php echo $OUTPUT->custom_menu_courses(); ?>
                             </div>
                             <div class="usermenu">
                                 <?php echo $OUTPUT->custom_menu_user(); ?>
                             </div>
-                        </div>
-                        <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
-                            <div id="weekname">
-                                <?php echo $OUTPUT->week_name(); ?>
+                            <div class="messagemenu">
+                                <?php echo $OUTPUT->custom_menu_messages(); ?>
+                            </div>
+                            <div class="gotobottommenu">
+                                <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
                             </div>
                         </div>
                         <div id='essentialmenus' class="nav-collapse collapse">
-                            <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
-                                <div id="custom_menu_activitystream">
-                                    <?php echo $OUTPUT->custom_menu_activitystream(); ?>
-                                </div>
-                            </div>
-                            <div class="pull-<?php echo ($left) ? 'right' : 'left'; ?>">
-                                <div id="custom_menu_courses">
-                                    <?php echo $OUTPUT->custom_menu_courses(); ?>
-                                </div>
-                            </div>
                             <div class="pull-<?php echo ($left) ? 'left' : 'right'; ?>">
                                 <div id="custom_menu_language">
                                     <?php echo $OUTPUT->custom_menu_language(); ?>
@@ -172,6 +166,11 @@ echo $OUTPUT->doctype();
                                 <div id="custom_menu">
                                     <?php echo $OUTPUT->custom_menu(); ?>
                                 </div>
+                                <?php
+                                // Course search for custom menu.
+                                $courserenderer = $PAGE->get_renderer('core', 'course');
+                                echo $OUTPUT->box($courserenderer->course_search_form('', 'short'), 'coursesearch');
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -179,9 +178,9 @@ echo $OUTPUT->doctype();
             </div>
         </div>
         <?php
-        // Course search.
+        // Course search for main header.
         $courserenderer = $PAGE->get_renderer('core', 'course');
-        echo $OUTPUT->box($courserenderer->course_search_form('', 'navbar'), 'coursesearch');
+        echo $OUTPUT->box($courserenderer->course_search_form(), 'coursesearch');
         ?>
     </nav>
 </header>
