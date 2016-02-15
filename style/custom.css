@@ -264,7 +264,7 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 #page-footer .purgecaches {
     margin: 10px 20px;
 }
-#page-footer .themecredit {
+#page-footer .themecredit, .themecredit {
     display: none;
 }
 #page-footer .footerlinks .helplink a .fa-question-circle:before {
