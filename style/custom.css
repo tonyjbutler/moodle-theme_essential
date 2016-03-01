@@ -236,8 +236,10 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 
 /* Footer */
 #page-footer {
+    background-color: #b5121b;
     font-size: 0.9em;
     position: relative;
+    border-top: none;
     border-bottom: none;
     margin: 10px 0 0;
     padding-bottom: 60px;
@@ -273,14 +275,26 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .lancs-footer-list-div dt, .lancs-footer-list-div dd {
     margin-left: 20px;
 }
+.lancs-footer-list-div dt {
+    font-size: 1.2em;
+    font-weight: normal;
+}
 .lancs-footer-list-1 {
     width: 28%;
+}
+.lancs-footer-list-1 .lancs-footer-list-item {
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+.lancs-footer-list-2 {
+    width: 20%;
+    border-left: 1px dotted #bbb;
 }
 .lancs-footer-list-3 {
     width: 24%;
 }
-.lancs-footer-list-2, .lancs-footer-list-6 {
-    width: 20%;
+.lancs-footer-list-6 {
+    width: 24%;
     border-left: 1px dotted #bbb;
 }
 @media (max-width: 767px) {
