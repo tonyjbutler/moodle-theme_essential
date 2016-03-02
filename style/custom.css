@@ -567,6 +567,144 @@ div.aspirelistbox ul.sectionitems li.listitem {
     visibility: hidden;
 }
 
+/* Additional course format rules (from Stephen) */
+body .course-content ul.ctopics li.section,
+body .course-content ul.weeks li.csection {
+    border: none;
+}
+.course-content ul li.section .content>div,
+.course-content ul li.section .section-modchooser {
+    margin: 0;
+}
+.course-content ul.ctopics.topics li.section.main .content {
+    border: 1px solid #e3e3e3;
+    border-radius: 6px 6px 35px 6px;
+
+}
+.course-content ul.ctopics.topics li.section.main.current .content {
+    background: none;
+}
+.course-content ul.ctopics.topics li.section.main.current .sectionhead,
+.course-content ul.ctopics.topics li.section.main.current .sectionhead a:hover {
+    background-color: #b5121b;
+    border-radius: 6px 6px 35px 6px;
+}
+.course-content ul.ctopics.topics li.section.main.hidden .content {
+    background: url([[pix:theme|bg/hidden-bg]]);
+}
+.course-content ul.ctopics.topics li.section.main .content .sectionbody {
+    padding: 20px;
+}
+.course-content ul.ctopics li.tcsection {
+    margin: 0 1px 10px 1px;
+}
+.course-content ul.ctopics li.section.main {
+    background: none;
+}
+.course-content ul.ctopics li.section.main#section-0 {
+    border: 1px solid #e3e3e3;
+    border-radius: 6px 6px 35px 6px;
+    margin-bottom: 5px;
+}
+.course-content ul.ctopics li.section.main.current {
+    box-shadow: none;
+    border: none;
+}
+.course-content ul.ctopics li.section.main.hidden {
+    background: none;
+}
+.course-content ul.ctopics li.section .sectionhead.toggle-arrow a {
+    margin-right: 10px;
+}
+.course-content ul.gridicons li p.icon_content {
+    margin-bottom: 5px;
+}
+.course-content ul.gtopics-0 #section-0 {
+    border: 1px solid #e3e3e3;
+    border-radius: 6px 6px 35px 6px;
+    margin-bottom: 20px;
+    padding: 20px;
+
+}
+div#gridshadebox_overlay {
+    z-index: 200;
+    cursor: pointer;
+}
+#gridshadebox_content.absolute {
+    z-index: 250;
+    top: 75px !important;
+}
+#gridshadebox_content {
+    border: none;
+    background: none;
+}
+#gridshadebox_content .content {
+    border: 1px solid #e3e3e3;
+    border-radius: 6px 6px 35px 6px;
+    background-color: white;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+#gridshadebox_content li.section.main.hidden .content {
+    background: url([[pix:theme|bg/hidden-bg]]);
+}
+#gridshadebox_content .sectionname {
+    background-color: #676767;
+    border-radius: 6px 6px 6px 6px;
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+#gridshadebox_content li.section.main.hidden .sectionname {
+    opacity: 1;
+    color: #e3e3e3;
+}
+#gridshadebox_content li.current .sectionname {
+    background-color: #b5121b;
+    border-radius: 6px 6px 6px 6px;
+}
+#gridshadebox_content .summary {
+    padding: 10px;
+    z-index: 250;
+    top: 75px !important;
+}
+#gridshadebox_close {
+    right: 0 !important;
+}
+.gridshadebox_left_area, .gridshadebox_right_area {
+    cursor: pointer;
+}
+#gridshadebox_content .activity {
+    border-bottom: none;
+}
+.course-content ul li.section.main {
+    background: none;
+    background-color: white;
+}
+.course-content ul.gtopics h3.sectionname {
+    border-bottom: none;
+}
+.course-content ul.gtopics li.section.current {
+    box-shadow: none;
+    border: none;
+}
+.course-content ul.gtopics li.section .section-modchooser-link a {
+    margin-right: 20px;
+}
+#gridiconcontainer ul.gridicons {
+    margin-bottom: 30px;
+}
+.course-content ul.gtopics li.section .left {
+    margin-top: 20px;
+}
+.course-content ul.gtopics li.section.main.hidden .content {
+    background: url([[pix:theme|bg/hidden-bg]]);
+}
+.course-content ul.gtopics li.section.main.hidden .content .sectioname {
+    opacity: 1;
+    color: #e3e3e3;
+}
+
 [[setting:fontfilesheading]]
 
 [[setting:fontfilesbody]]
