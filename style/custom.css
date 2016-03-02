@@ -326,8 +326,10 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 }
 
 /* Blocks */
-.block {
+.block,
+.block_docked {
     border-radius: 6px 6px 35px 6px;
+    padding-left: 6px;
 }
 .block .header .title h2:before,
 .block.block_iconic_html .header .title h2 span.fa:before {
