@@ -22,6 +22,9 @@ body a.back-to-top i.fa-angle-up {
 body a.back-to-top i.fa-angle-up:hover {
     color: #555;
 }
+body.has_dock #dock {
+    background-color: #676767;
+}
 div#fullscreenfloat.fullscreen {
     top: auto;
 }
