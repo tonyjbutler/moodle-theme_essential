@@ -572,10 +572,6 @@ body .course-content ul.ctopics li.section,
 body .course-content ul.weeks li.csection {
     border: none;
 }
-.course-content ul li.section .content>div,
-.course-content ul li.section .section-modchooser {
-    margin: 0;
-}
 .course-content ul.ctopics.topics li.section.main .content {
     border: 1px solid #e3e3e3;
     border-radius: 6px 6px 35px 6px;
