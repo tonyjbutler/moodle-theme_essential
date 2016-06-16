@@ -25,6 +25,11 @@
  */
 ?>
     <nav id="essentialnavbar" role="navigation" class="moodle-has-zindex<?php echo ($oldnavbar) ? ' oldnavbar' : '';  echo ($haslogo) ? ' logo' : ' nologo';?>">
+        <?php
+        // Course search for main header.
+        $courserenderer = $PAGE->get_renderer('core', 'course');
+        echo $OUTPUT->box($courserenderer->course_search_form(), 'coursesearch');
+        ?>
         <div class="navbar">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
@@ -51,7 +56,7 @@
                         <div class="messagemenu navbarrightitem">
                             <?php echo $OUTPUT->custom_menu_messages(); ?>
                         </div>
-                        <div class="navbarrightitem">
+                        <div class="gotobottommenu navbarrightitem">
                             <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
                         </div>
                         <div id="custom_menu_editing" class="navbarrightitem">
@@ -87,9 +92,4 @@
                 </div>
             </div>
         </div>
-        <?php
-        // Course search for main header.
-        $courserenderer = $PAGE->get_renderer('core', 'course');
-        echo $OUTPUT->box($courserenderer->course_search_form(), 'coursesearch');
-        ?>
     </nav>
