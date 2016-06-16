@@ -29,6 +29,11 @@ defined('MOODLE_INTERNAL') || die;
 
 ?>
     <nav id="essentialnavbar" role="navigation" class="moodle-has-zindex<?php echo ($oldnavbar) ? ' oldnavbar' : '';  echo ($haslogo) ? ' logo' : ' nologo';?>">
+        <?php
+        // Course search for main header.
+        $courserenderer = $PAGE->get_renderer('core', 'course');
+        echo $OUTPUT->box($courserenderer->course_search_form(), 'coursesearch');
+        ?>
         <div class="navbar">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
@@ -49,7 +54,7 @@ defined('MOODLE_INTERNAL') || die;
                         <div class="messagemenu navbarrightitem">
                             <?php echo $OUTPUT->navbar_plugin_output(); ?>
                         </div>
-                        <div class="navbarrightitem">
+                        <div class="gotobottommenu navbarrightitem">
                             <?php echo $OUTPUT->custom_menu_goto_bottom(); ?>
                         </div>
                         <?php echo $OUTPUT->context_header_settings_menu(); ?>
@@ -79,9 +84,4 @@ defined('MOODLE_INTERNAL') || die;
                 </div>
             </div>
         </div>
-        <?php
-        // Course search for main header.
-        $courserenderer = $PAGE->get_renderer('core', 'course');
-        echo $OUTPUT->box($courserenderer->course_search_form(), 'coursesearch');
-        ?>
     </nav>
