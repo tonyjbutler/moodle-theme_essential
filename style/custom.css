@@ -649,20 +649,20 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_settings .block_tree .tree_item.branch {
     padding-left: inherit !important;
 }
-.block_navigation .block_tree .tree_item.branch[aria-expanded="false"]:before,
-.block_settings .block_tree .tree_item.branch[aria-expanded="false"]:before {
+.block_navigation .block_tree .tree_item.branch[aria-expanded="false"]::before,
+.block_settings .block_tree .tree_item.branch[aria-expanded="false"]::before {
     content: "\f07b";
 }
-.block_navigation .block_tree .tree_item.branch[aria-expanded="true"]:before,
-.block_settings .block_tree .tree_item.branch[aria-expanded="true"]:before {
+.block_navigation .block_tree .tree_item.branch[aria-expanded="true"]::before,
+.block_settings .block_tree .tree_item.branch[aria-expanded="true"]::before {
     content: "\f07c";
 }
-.block_navigation .block_tree .tree_item.emptybranch[aria-expanded="false"]:before,
-.block_settings .block_tree .tree_item.emptybranch[aria-expanded="false"]:before {
+.block_navigation .block_tree .tree_item.emptybranch[aria-expanded="false"]::before,
+.block_settings .block_tree .tree_item.emptybranch[aria-expanded="false"]::before {
     content: "\f114";
 }
-.block_navigation .block_tree .tree_item.emptybranch[aria-expanded="true"]:before,
-.block_settings .block_tree .tree_item.emptybranch[aria-expanded="true"]:before {
+.block_navigation .block_tree .tree_item.emptybranch[aria-expanded="true"]::before,
+.block_settings .block_tree .tree_item.emptybranch[aria-expanded="true"]::before {
     content: "\f115";
 }
 .block_navigation .content p.tree_item.hasicon.activesetting,
@@ -743,6 +743,19 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_admin_bookmarks .content a:hover,
 .block_admin_bookmarks .content a:focus {
     color: #999;
+}
+.jsenabled .block .block_tree .tree_item.branch.loading {
+    position: relative;
+    margin-left: 18px;
+}
+.jsenabled .block .block_tree .tree_item.branch.loading::before {
+    position: absolute;
+    left: -18px;
+    content: "\f110";
+    -moz-animation: fa-spin 1s infinite steps(8);
+    -webkit-animation: fa-spin 1s infinite steps(8);
+    -o-animation: fa-spin 1s infinite steps(8);
+    animation: fa-spin 1s infinite steps(8);
 }
 
 /* Course */
@@ -871,6 +884,7 @@ div.aspirelistbox ul.sectionitems li.listitem {
 div#navbuttons a img {
     background-color: #bbb !important;
     max-width: 36px;
+    max-height: 36px;
 }
 div#navbuttons a img:hover,
 div#navbuttons a img:focus {
