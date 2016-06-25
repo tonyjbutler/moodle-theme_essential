@@ -349,16 +349,24 @@ table.flexible tbody > tr:nth-child(odd) > th a:focus,
 .navbar .navbar-inner .gotobottommenu {
     display: none !important;
 }
-.navbar .navbar-inner .nav>li>a i {
-    color: inherit;
+.navbar .navbar-inner .nav>li>a span.fa {
     margin-right: 5px;
 }
+.navbar .navbar-inner #custom_menu_week_name .nav>li>a span.fa {
+    margin-right: 0;
+}
+.navbar .navbar-inner #custom_menu_week_name .nav>li>a span.nav-title {
+    margin-left: 5px;
+}
+.navbar .navbar-inner .usermenu .nav .dropdown img.userpicture {
+    margin-right: 3px;
+}
 @media (max-width: 1199px) {
+    .navbar .navbar-inner .nav>li>a span.fa {
+        margin-right: 0;
+    }
     .navbar .navbar-inner .nav>li>a span.nav-title {
         display: none;
-    }
-    .navbar .navbar-inner .nav>li>a .fa {
-        margin-right: 0;
     }
 }
 @media (max-width: 979px) {

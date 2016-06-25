@@ -167,8 +167,12 @@ class core_renderer extends \core_renderer {
     public function footer() {
         global $CFG;
 
-        require_once($CFG->dirroot.'/blocks/navbuttons/footer.php');
-        $output = draw_navbuttons().$this->container_end_all(true);
+        if (file_exists($CFG->dirroot . '/blocks/navbuttons/footer.php')) {
+            require_once($CFG->dirroot . '/blocks/navbuttons/footer.php');
+            $output = draw_navbuttons() . $this->container_end_all(true);
+        } else {
+            $output = '';
+        }
 
         $footer = $this->opencontainers->pop('header/footer');
 
@@ -1008,11 +1012,15 @@ class core_renderer extends \core_renderer {
             return '';
         }
 
-        require_once($CFG->dirroot . '/local/lutermdates/lib.php');
-        $weekname = local_lutermdates_get_week_name();
+        if (file_exists($CFG->dirroot . '/local/lutermdates/lib.php')) {
+            require_once($CFG->dirroot . '/local/lutermdates/lib.php');
+            $weekname = local_lutermdates_get_week_name();
+        } else {
+            $weekname = '';
+        }
 
-        $icon = html_writer::tag('i', '', array('class' => 'fa fa-calendar'));
-        $title = html_writer::span($weekname, 'nav-title');
+        $icon = html_writer::span('', 'fa fa-calendar');
+        $title = (!empty($weekname)) ? html_writer::span($weekname, 'nav-title') : '';
         $link = new moodle_url('https://portal.lancaster.ac.uk/student_portal#timetable');
 
         $menu = new custom_menu();
