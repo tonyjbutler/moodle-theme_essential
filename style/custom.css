@@ -45,6 +45,24 @@ h1, h2, h3 {
     color: #fff !important;
 }
 
+/* Button group background colour overrides */
+#page form .form-buttons #fgroup_id_buttonar,
+#page form table#form td.submit #fgroup_id_buttonar,
+#page form .path-admin .buttons #fgroup_id_buttonar,
+#page form #fitem_id_submitbutton #fgroup_id_buttonar,
+#page form .fp-content-center form + div #fgroup_id_buttonar,
+#page form div.backup-section + form #fgroup_id_buttonar,
+#page form #fgroup_id_buttonar #fgroup_id_buttonar,
+#page form fieldset:last-of-type.hidden #fgroup_id_buttonar,
+#page form .form-buttons,
+#region-main form .form-buttons,
+#page form #fgroup_id_buttonar,
+#region-main form #fgroup_id_buttonar,
+#page form #fitem_id_submitbutton {
+    background-color: #f5f5f5;
+    border-top: 1px solid #e3e3e3;
+}
+
 /* Stupid button text shadow overrides */
 body button:hover,
 body .btn-default:hover,
