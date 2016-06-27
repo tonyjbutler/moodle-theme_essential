@@ -749,6 +749,20 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_admin_bookmarks .content a:focus {
     color: #999;
 }
+.block_settings .content .type_siteadmin p.tree_item.hasicon a i.fa-cogs,
+.block_settings .content .type_siteadmin p.tree_item.hasicon a img.smallicon {
+    display: none;
+}
+.block_settings .content .type_siteadmin p.tree_item.hasicon a::before {
+    font-family: FontAwesome;
+    content: "\f085";
+    color: #eee;
+    margin-right: 5px;
+}
+.block_settings .content .type_siteadmin p.tree_item.hasicon:hover a::before,
+.block_settings .content .type_siteadmin p.tree_item.hasicon:focus a::before {
+    color: #999;
+}
 .jsenabled .block .block_tree .tree_item.branch.loading {
     position: relative;
     margin-left: 18px;
