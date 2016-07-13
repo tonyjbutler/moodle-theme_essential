@@ -64,6 +64,7 @@ h1, h2, h3 {
 #page form #fitem_id_submitbutton {
     background-color: #f5f5f5;
     border-top: 1px solid #e3e3e3;
+    width: inherit;
 }
 
 /* Stupid button text shadow overrides */
@@ -476,41 +477,55 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
     font-weight: bold;
     color: #fff;
 }
-.breadcrumb-nav {
+.dir-ltr .breadcrumb-nav {
     width: auto;
 }
-.breadcrumb-nav ul.breadcrumb {
+.dir-ltr .breadcrumb-nav ul.breadcrumb {
     width: inherit !important;
 }
-.breadcrumb-nav ul.breadcrumb.style1 li {
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li {
     border-width: 0;
 }
-.breadcrumb-nav ul.breadcrumb.style1 li:hover,
-.breadcrumb-nav ul.breadcrumb.style1 li:focus {
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:hover,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:focus {
     background-color: #555;
     border-color: #555;
 }
-.breadcrumb-nav ul.breadcrumb.style1 li:hover::after,
-.breadcrumb-nav ul.breadcrumb.style1 li:focus::after {
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:hover::after,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:focus::after {
     border-left-color: #555;
 }
-.breadcrumb-nav ul.breadcrumb.style1 li:hover::before,
-.breadcrumb-nav ul.breadcrumb.style1 li:focus::before {
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:hover::before,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:focus::before {
     border-left-color: #fff;
 }
-.breadcrumb-nav ul.breadcrumb.style1 li:hover span,
-.breadcrumb-nav ul.breadcrumb.style1 li:focus span,
-.breadcrumb-nav ul.breadcrumb.style1 li:hover a,
-.breadcrumb-nav ul.breadcrumb.style1 li:focus a,
-.breadcrumb-nav ul.breadcrumb.style1 li:hover a::before,
-.breadcrumb-nav ul.breadcrumb.style1 li:focus a::before {
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li span {
+    margin-right: inherit;
+}
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:hover span,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:focus span,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:hover a,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:focus a,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:hover a::before,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:focus a::before {
     color: #fff;
 }
-.breadcrumb-button input[type="submit"]:hover,
-.breadcrumb-button input[type="submit"]:focus {
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li .dimmed_text {
+    color: #aaa;
+}
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:hover .dimmed_text,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:focus .dimmed_text,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:hover .dimmed_text span,
+.dir-ltr .breadcrumb-nav ul.breadcrumb.style1 li:focus .dimmed_text span {
+    color: #aaa;
+}
+.dir-ltr .breadcrumb-button input[type="submit"] {
+    border: none;
+}
+.dir-ltr .breadcrumb-button input[type="submit"]:hover,
+.dir-ltr .breadcrumb-button input[type="submit"]:focus {
     color: #fff;
     background-color: #555;
-    border-color: #555;
 }
 
 /* Footer */
@@ -665,10 +680,6 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_settings .block_tree li ul {
     padding-left: 18px;
 }
-.block_navigation .block_tree p.tree_item .fa,
-.block_settings .block_tree p.tree_item .fa {
-    display: inherit;
-}
 .block_navigation .block_tree .tree_item,
 .block_navigation .block_tree .tree_item.branch,
 .block_settings .block_tree .tree_item,
@@ -713,6 +724,11 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_navigation .content p.tree_item.hasicon a,
 .block_navigation .content p.tree_item.hasicon a>.fa {
     color: #eee;
+}
+.block_navigation .content p.tree_item.branch .dimmed_text,
+.block_navigation .content p.tree_item.hasicon .dimmed_text,
+.block_navigation .content p.tree_item.hasicon .dimmed {
+    color: #aaa;
 }
 .block_navigation .menubar .icon:hover::before,
 .block_navigation .menubar .icon:focus::before,
@@ -784,6 +800,9 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_settings .content .type_siteadmin p.tree_item.hasicon:focus a::before {
     color: #999;
 }
+.block .moodle-actionmenu[data-enhanced].show {
+    white-space: inherit;
+}
 .jsenabled .block .block_tree .tree_item.branch.loading {
     position: relative;
     margin-left: 18px;
@@ -799,16 +818,14 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 }
 
 /* Course */
-body .course-content ul.topics li.section,
-body .course-content ul.weeks li.section {
+body .course-content ul li.section.main {
     border: 1px solid #e3e3e3;
-    border-radius: 6px 6px 35px 6px;
+    border-radius: 6px 6px 35px 6px !important;
     background: none;
     margin: 5px 0 20px;
     padding: 10px 0 5px;
 }
-body .course-content ul.topics li.section.hidden,
-body .course-content ul.weeks li.section.hidden {
+body .course-content ul li.section.main.hidden {
     background: url([[pix:theme|bg/hidden-bg]]);
 }
 .course-content ul li.section .content>div,
@@ -859,9 +876,15 @@ body .course-content ul.weeks li.section.hidden {
     border-top: 1px dotted #E1E1E1;
 }
 
+/* Fix alignment of admin setting defaults */
+.form-item .form-setting .form-defaultinfo,
+.form-item .form-setting .form-password .unmask {
+    display: inline-block;
+}
+
 /* Fix checkbox right margin */
-input[type="checkbox"] {
-    margin-right: 6px;
+.dir-ltr input[type="checkbox"] {
+    margin-right: 5px;
 }
 
 /* Fix clipping of large text in labels */
@@ -918,6 +941,9 @@ div.aspirelistbox ul.sectionitems li.listitem {
 #page-mod-questionnaire-complete td.notanswered,
 #page-mod-questionnaire-preview td.notanswered {
     visibility: hidden;
+}
+#page-mod-questionnaire-preview .heading-rts {
+    display: none;
 }
 
 /* block_navbuttons */
