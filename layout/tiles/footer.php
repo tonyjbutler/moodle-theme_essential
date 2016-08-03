@@ -60,3 +60,6 @@ if (empty($PAGE->layout_options['nofooter'])) { ?>
     <a href="#top" class="back-to-top" ><span aria-hidden="true" class="fa fa-angle-up "></span></a>
 <?php }
 echo $OUTPUT->standard_end_of_body_html();
+
+// Finally, load the JS for local_fullscreen.
+new local_fullscreen_init();
