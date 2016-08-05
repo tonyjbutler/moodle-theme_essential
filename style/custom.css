@@ -918,6 +918,11 @@ body .course-content ul li.section.main.hidden {
     margin-top: auto;
 }
 
+/* Grading table edit menu fix */
+.moodle-actionmenu[data-enhanced].show .menu.align-tl-bl {
+    top: -12px;
+}
+
 /* mod_aspirelist */
 #page-mod-aspirelist-view ul.sectionitems li.listitem,
 div.aspirelistbox ul.sectionitems li.listitem {
