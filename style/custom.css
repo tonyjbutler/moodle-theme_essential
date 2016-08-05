@@ -917,7 +917,7 @@ body .course-content ul li.section.main.hidden {
 
 /* Grading table edit menu fix */
 .moodle-actionmenu[data-enhanced].show .menu.align-tl-bl {
-    top: -12px;
+    top: -36px;
 }
 
 /* mod_aspirelist */
