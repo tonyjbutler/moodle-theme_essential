@@ -923,6 +923,21 @@ body .course-content ul li.section.main.hidden {
     top: -36px;
 }
 
+/* Interactive transcript link */
+#page-mod-assign-view .feedbacktable .alert-error a {
+    color: #555;
+}
+#page-mod-assign-view .feedbacktable .alert-error a:hover,
+#page-mod-assign-view .feedbacktable .alert-error a:focus {
+    text-decoration: underline;
+}
+
+/* Enlarge buttons to increase/decrease number of sections */
+#changenumsections img {
+    width: 24px;
+    height: 24px;
+}
+
 /* mod_aspirelist */
 #page-mod-aspirelist-view ul.sectionitems li.listitem,
 div.aspirelistbox ul.sectionitems li.listitem {
