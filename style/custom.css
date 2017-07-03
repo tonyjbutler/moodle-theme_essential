@@ -28,6 +28,10 @@ body a.back-to-top .fa-angle-up:hover {
 body.has_dock #dock {
     background-color: #676767;
 }
+body#page-admin-setting-theme_essential_styleguide,
+body#page-admin-search {
+    position: inherit;
+}
 div#fullscreenfloat.fullscreen {
     top: auto;
 }
@@ -269,6 +273,10 @@ table.flexible tbody > tr:nth-child(odd) > th a:focus,
 }
 
 /* Header */
+#page-header .container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 #page-header.logo {
     height: inherit;
     background-size: 100% 100%;
@@ -328,6 +336,9 @@ table.flexible tbody > tr:nth-child(odd) > th a:focus,
 #essentialnavbar {
     position: absolute;
 }
+#essentialnavbar .navbar {
+    position: inherit;
+}
 @media (max-width: 979px) {
     .container-fluid.navbar-inner {
         padding: 0;
@@ -345,6 +356,9 @@ table.flexible tbody > tr:nth-child(odd) > th a:focus,
 .navbar .navbar-inner #custom_menu_week_name {
     display: inline;
     vertical-align: top;
+}
+.navbar .navbar-inner .dropdown .dropdown-menu {
+    margin-top: 0 !important;
 }
 .navbar .navbar-inner .dropdown ul.dropdown-menu .fa {
     color: #888;
@@ -599,7 +613,7 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
         border-left: none !important;
     }
 }
-#additional-footer {
+.footnote #additional-footer {
     background-color: #282828;
     position: absolute;
     left: 0;
@@ -607,15 +621,15 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
     width: 100%;
     padding-bottom: 8px;
 }
-#additional-footer .additional-footer-lists-wrapper {
+.footnote #additional-footer .additional-footer-lists-wrapper {
     width: 96%;
     max-width: 1280px;
     margin: 0 auto;
 }
-#additional-footer dl {
+.footnote #additional-footer dl {
     margin: 12px 0 0;
 }
-#additional-footer dd.additional-footer-list-item {
+.footnote #additional-footer dd.additional-footer-list-item {
     display: inline-flex;
     margin: 0 10px;
 }
@@ -787,7 +801,7 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
     color: #999;
 }
 .block_settings .content .type_siteadmin p.tree_item.hasicon a i.fa-cogs,
-.block_settings .content .type_siteadmin p.tree_item.hasicon a img.smallicon {
+.block_settings .content .type_siteadmin p.tree_item.hasicon a img {
     display: none;
 }
 .block_settings .content .type_siteadmin p.tree_item.hasicon a::before {
