@@ -142,6 +142,11 @@ if ($hassocialnetworks || $hasmobileapps) {
 <?php
 }
 ?>
+                <?php
+                // Course search for main header.
+                $courserenderer = $PAGE->get_renderer('core', 'course');
+                echo $OUTPUT->box($courserenderer->course_search_form(), 'coursesearch');
+                ?>
             </div>
         </div>
     </div>

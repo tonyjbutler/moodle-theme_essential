@@ -423,50 +423,52 @@ table.flexible tbody > tr:nth-child(odd) > th a:focus,
         background-color: #e2e2e2;
     }
 }
-nav .coursesearchbox {
+nav .coursesearchbox,
+#page-header .coursesearchbox {
     text-align: left;
     white-space: nowrap;
 }
-nav[role=navigation]>.coursesearch {
-    width: 96%;
-    max-width: 1280px;
-    margin: 0 auto;
+#page-header .coursesearch {
     position: relative;
 }
 @media (max-width: 767px) {
-    nav[role=navigation]>.coursesearch {
+    #page-header .coursesearch {
         display: none;
     }
 }
-nav[role=navigation]>.coursesearch form {
+#page-header .coursesearch form {
     position: absolute;
-    top: 54px;
+    top: 28px;
     right: 5px;
 }
 @media (max-width: 1199px) {
-    nav[role=navigation]>.coursesearch form {
-        top: 49px;
+    #page-header .coursesearch form {
+        top: 23px;
     }
 }
 @media (max-width: 979px) {
-    nav[role=navigation]>.coursesearch form {
-        top: 40px;
+    #page-header .coursesearch form {
+        top: 14px;
     }
 }
-nav[role=navigation] .coursesearch form label {
+nav[role=navigation] .coursesearch form label,
+#page-header .coursesearch form label {
     display: block;
     font-size: 1em;
 }
-nav[role=navigation] .coursesearch form input[type="text"] {
+nav[role=navigation] .coursesearch form input[type="text"],
+#page-header .coursesearch form input[type="text"] {
     width: 200px;
     height: 23px;
 }
 @media (max-width: 979px) {
-    nav[role=navigation] .coursesearch form input[type="text"] {
+    nav[role=navigation] .coursesearch form input[type="text"],
+    #page-header .coursesearch form input[type="text"] {
         width: 160px;
     }
 }
-nav[role=navigation] .coursesearch form input[type="submit"] {
+nav[role=navigation] .coursesearch form input[type="submit"],
+#page-header .coursesearch form input[type="submit"] {
     background: url([[pix:theme|search]]) no-repeat;
     color: transparent;
     border: none;

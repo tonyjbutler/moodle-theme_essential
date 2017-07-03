@@ -29,11 +29,6 @@ defined('MOODLE_INTERNAL') || die;
 
 ?>
     <nav id="essentialnavbar" role="navigation" class="moodle-has-zindex<?php echo ($oldnavbar) ? ' oldnavbar' : '';  echo ($haslogo) ? ' logo' : ' nologo';?>">
-        <?php
-        // Course search for main header.
-        $courserenderer = $PAGE->get_renderer('core', 'course');
-        echo $OUTPUT->box($courserenderer->course_search_form(), 'coursesearch');
-        ?>
         <div class="navbar">
             <div class="container-fluid navbar-inner">
                 <div class="row-fluid">
