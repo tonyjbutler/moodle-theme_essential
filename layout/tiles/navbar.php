@@ -66,11 +66,9 @@ defined('MOODLE_INTERNAL') || die;
                             <?php echo $OUTPUT->search_box(); ?>
                         </div>
                     </div>
-                        <div id='essentialmenus' class="nav-collapse collapse">
-                            <div class="pull-left">
-                                <?php echo $OUTPUT->custom_menu_language(); ?>
-                            </div>
+                        <div id='essentialmenus' class="nav-collapse collapse pull-left">
                             <?php
+                            echo $OUTPUT->custom_menu_language();
                             if ($colourswitcher) {
                                 echo $OUTPUT->custom_menu_themecolours();
                             }
