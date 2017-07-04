@@ -277,57 +277,6 @@ table.flexible tbody > tr:nth-child(odd) > th a:focus,
     padding-left: 20px;
     padding-right: 20px;
 }
-#page-header.logo {
-    height: inherit;
-    background-size: 100% 100%;
-    background-repeat: repeat-y;
-    border-bottom-color: #e2e2e2;
-}
-#page-header.logo div.pull-left {
-    width: 60%;
-}
-#page-header.logo a.logo {
-    margin: -180px 0 0;
-    height: 300px;
-    width: 100%;
-    background-position: 0 100%;
-}
-@media (max-width: 1199px) {
-    #page-header.logo a.logo {
-        margin: -190px 0 0;
-    }
-}
-@media (max-width: 979px) {
-    #page-header.logo a.logo {
-        margin: -210px 0 0;
-    }
-}
-@media (max-width: 767px) {
-    #page-header.logo div.pull-left {
-        width: 90%;
-    }
-    #page-header.logo a.logo {
-        margin: -200px 10px 0;
-    }
-}
-@media (max-width: 599px) {
-    #page-header.logo a.logo {
-        margin: -220px 10px 0;
-    }
-}
-@media (max-width: 479px) {
-    #page-header.logo div.pull-left {
-        width: 80%;
-    }
-    #page-header.logo a.logo {
-        margin: -240px 10px 0;
-    }
-}
-@media (max-width: 399px) {
-    #page-header.logo a.logo {
-        margin: -250px 10px 0;
-    }
-}
 #page-header.logo a[data-target="#essentialicons"],
 #page-header.logo #mobileapps,
 #page-header.logo #socialnetworks {
@@ -431,7 +380,7 @@ nav .coursesearchbox,
 #page-header .coursesearch {
     position: relative;
 }
-@media (max-width: 767px) {
+@media (max-width: 979px) {
     #page-header .coursesearch {
         display: none;
     }
@@ -443,12 +392,7 @@ nav .coursesearchbox,
 }
 @media (max-width: 1199px) {
     #page-header .coursesearch form {
-        top: 23px;
-    }
-}
-@media (max-width: 979px) {
-    #page-header .coursesearch form {
-        top: 14px;
+        top: 20px;
     }
 }
 nav[role=navigation] .coursesearch form label,
@@ -479,7 +423,7 @@ nav[role=navigation] .coursesearch form input[type="submit"],
     text-shadow: none;
     box-shadow: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 980px) {
     .navbar .navbar-inner .nav-collapse .coursesearch {
         display: none;
     }
