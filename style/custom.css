@@ -277,6 +277,12 @@ table.flexible tbody > tr:nth-child(odd) > th a:focus,
     padding-left: 20px;
     padding-right: 20px;
 }
+@media (max-width: 767px) {
+    #page-header .container-fluid {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
 #page-header.logo a[data-target="#essentialicons"],
 #page-header.logo #mobileapps,
 #page-header.logo #socialnetworks {
@@ -309,25 +315,29 @@ table.flexible tbody > tr:nth-child(odd) > th a:focus,
 .navbar .navbar-inner .dropdown .dropdown-menu {
     margin-top: 0 !important;
 }
-.navbar .navbar-inner .dropdown ul.dropdown-menu .fa {
+.navbar .navbar-inner .dropdown .dropdown-menu .fa {
     color: #888;
 }
-.navbar .navbar-inner #custom_menu_activitystream ul.dropdown-menu,
-.navbar .navbar-inner #custom_menu_courses ul.dropdown-menu,
-.navbar .navbar-inner #custom_menu_language ul.dropdown-menu {
+.navbar .navbar-inner .dropdown .dropdown-menu a:first-of-type > .icon {
+    margin-left: 0;
+    padding-right: 0;
+}
+.navbar .navbar-inner #custom_menu_activitystream .dropdown-menu,
+.navbar .navbar-inner #custom_menu_courses .dropdown-menu,
+.navbar .navbar-inner #custom_menu_language .dropdown-menu {
     overflow-y: inherit;
     max-height: inherit;
 }
 @media (max-width: 479px) {
-    .navbar .navbar-inner #custom_menu_activitystream ul.dropdown-menu,
-    .navbar .navbar-inner #custom_menu_courses ul.dropdown-menu,
-    .navbar .navbar-inner #custom_menu_language ul.dropdown-menu {
+    .navbar .navbar-inner #custom_menu_activitystream .dropdown-menu,
+    .navbar .navbar-inner #custom_menu_courses .dropdown-menu,
+    .navbar .navbar-inner #custom_menu_language .dropdown-menu {
         max-width: 160px;
     }
-    .navbar .navbar-inner #custom_menu_activitystream ul.dropdown-menu li a,
-    .navbar .navbar-inner #custom_menu_courses ul.dropdown-menu li a,
-    .navbar .navbar-inner #custom_menu_language ul.dropdown-menu li a {
-        white-space: inherit;
+    .navbar .navbar-inner #custom_menu_activitystream .dropdown-menu li a,
+    .navbar .navbar-inner #custom_menu_courses .dropdown-menu li a,
+    .navbar .navbar-inner #custom_menu_language .dropdown-menu li a {
+        white-space: normal;
     }
 }
 .navbar .navbar-inner .messagemenu,
@@ -405,15 +415,12 @@ nav[role=navigation] .coursesearch form input[type="text"],
     width: 200px;
     height: 23px;
 }
-@media (max-width: 979px) {
-    nav[role=navigation] .coursesearch form input[type="text"],
-    #page-header .coursesearch form input[type="text"] {
-        width: 160px;
-    }
+nav[role=navigation] .coursesearch form input[type="text"] {
+    width: 160px;
 }
 nav[role=navigation] .coursesearch form input[type="submit"],
 #page-header .coursesearch form input[type="submit"] {
-    background: url([[pix:theme|search]]) no-repeat;
+    background: url([[pix:theme|search_grey]]) no-repeat;
     color: transparent;
     border: none;
     border-radius: 0;
@@ -422,6 +429,9 @@ nav[role=navigation] .coursesearch form input[type="submit"],
     height: 33px;
     text-shadow: none;
     box-shadow: none;
+}
+nav[role=navigation] .coursesearch form input[type="submit"] {
+    background: url([[pix:theme|search]]) no-repeat;
 }
 @media (min-width: 980px) {
     .navbar .navbar-inner .nav-collapse .coursesearch {
@@ -892,18 +902,9 @@ body .course-content ul li.section.main.hidden {
     text-decoration: underline;
 }
 
-/* Enlarge buttons to increase/decrease number of sections */
-#changenumsections img {
-    width: 24px;
-    height: 24px;
-}
-
-/* mod_aspirelist */
-#page-mod-aspirelist-view ul.sectionitems li.listitem,
-div.aspirelistbox ul.sectionitems li.listitem {
-    line-height: inherit;
-    background-image: none;
-    padding: 6px 0;
+/* Fix activity chooser layout */
+.choosercontainer #chooserform span:first-of-type > .icon {
+    margin: 0;
 }
 
 /* mod_book */
