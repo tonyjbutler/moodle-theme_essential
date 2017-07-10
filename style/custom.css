@@ -32,9 +32,6 @@ body#page-admin-setting-theme_essential_styleguide,
 body#page-admin-search {
     position: inherit;
 }
-div#fullscreenfloat.fullscreen {
-    top: auto;
-}
 h1, h2, h3 {
     line-height: normal;
 }
@@ -830,6 +827,25 @@ body .course-content ul li.section.main.hidden {
     text-shadow: rgba(255, 255, 255, 0.498039) 0px 1px 0px;
 }
 
+/* Grading page */
+.path-mod-assign [data-region=grading-navigation-panel] {
+    padding: 4px 12px;
+}
+.path-mod-assign [data-region=grading-navigation-panel] [data-region=user-info] {
+    margin-top: 3px;
+}
+.path-mod-assign [data-region=grading-navigation-panel] #page-navbar {
+    margin-top: 4px;
+}
+.path-mod-assign [data-region=review-panel],
+.path-mod-assign [data-region=grade-panel] {
+    top: 110px;
+}
+.assignfeedback_editpdf_widget .pageheader button img {
+    padding-right: 0;
+    margin-right: 0;
+}
+
 /* Fix calendar block spacing */
 .block .minicalendar {
     margin-bottom: 8px;
@@ -936,6 +952,14 @@ div#navbuttons a img {
 div#navbuttons a img:hover,
 div#navbuttons a img:focus {
     background-color: #999 !important;
+}
+
+/* local_fullscreen fixes */
+#region-main div#fullscreen.fullscreen {
+    z-index: 2;
+}
+div#fullscreenfloat.fullscreen {
+    top: auto;
 }
 
 /* Additional course format rules (from Stephen) */
