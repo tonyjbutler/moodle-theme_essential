@@ -829,21 +829,18 @@ body .course-content ul li.section.main.hidden {
 
 /* Grading page */
 .path-mod-assign [data-region=grading-navigation-panel] {
-    padding: 4px 12px;
-}
-.path-mod-assign [data-region=grading-navigation-panel] [data-region=user-info] {
-    margin-top: 3px;
-}
-.path-mod-assign [data-region=grading-navigation-panel] #page-navbar {
-    margin-top: 4px;
+    padding: 12px;
+    height: 58px;
 }
 .path-mod-assign [data-region=review-panel],
 .path-mod-assign [data-region=grade-panel] {
-    top: 110px;
+    top: 84px;
 }
-.assignfeedback_editpdf_widget .pageheader button img {
+.path-mod-assign [data-region=review-panel] .assignfeedback_editpdf_widget .pageheader button img {
     padding-right: 0;
-    margin-right: 0;
+}
+.path-mod-assign [data-region=grade-panel] .assignsubmission_comments .comment-link[aria-expanded=true] > .fa-plus-square:before {
+    content: "\f146";
 }
 
 /* Fix calendar block spacing */
