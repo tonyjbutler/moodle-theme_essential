@@ -180,9 +180,6 @@ table .fa:not(.btn):not(.menu-action):focus {
 #essentialnavbar {
     position: absolute;
 }
-#essentialnavbar .navbar {
-    position: inherit;
-}
 @media (max-width: 979px) {
     .container-fluid.navbar-inner {
         padding: 0;
@@ -394,6 +391,7 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
     border-top: none;
     border-bottom: none;
     margin: 10px 0 0;
+    padding-top: 10px;
     padding-bottom: 60px;
 }
 #page-footer .footerlinks .helplink a {
@@ -814,7 +812,11 @@ body .course-content ul li.section.main.hidden {
     margin: 0;
 }
 
-/* Fix user profile header button icons */
+/* Fix user profile header buttons */
+#page-user-profile .header-button-group {
+    margin-top: 10px;
+}
+#page-user-profile .header-button-group span:first-of-type > .icon,
 .userprofile .header-button-group span:first-of-type > .icon {
     margin-left: 0;
     margin-right: 0.5rem;
@@ -863,9 +865,6 @@ div#navbuttons a img:focus {
 }
 #region-main div#fullscreen.fullscreen {
     z-index: 2;
-}
-div#fullscreenfloat.fullscreen {
-    top: auto;
 }
 
 /* Initial bar fixes */
