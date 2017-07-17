@@ -42,10 +42,10 @@ h1, h2, h3 {
 }
 
 /* Button text colour overrides */
-.btn, .btn-link, .btn-link:visited {
+input.btn, input.btn-link, input.btn-link:visited {
     color: #282828 !important;
 }
-.btn-primary, .btn-danger, .btn-info, .btn-success, .btn-warning {
+a.btn-primary, a.btn-danger, a.btn-info, a.btn-success, a.btn-warning {
     color: #fff !important;
 }
 
@@ -68,7 +68,7 @@ h1, h2, h3 {
     width: inherit;
 }
 
-/* Stupid button text shadow overrides */
+/* Button text shadow overrides */
 body button:hover,
 body .btn-default:hover,
 body a.btn-default:hover,
@@ -132,7 +132,7 @@ body .submit.buttons input[name=cancel][disabled] {
     text-shadow: none;
 }
 
-/* Ludicrous editing region thick dashed border overrides */
+/* Editing region thick dashed border overrides */
 .editing.used-region-footer-left #block-region-footer-left,
 .editing.used-region-footer-middle #block-region-footer-middle,
 .editing.used-region-footer-right #block-region-footer-right,
@@ -145,128 +145,20 @@ body .submit.buttons input[name=cancel][disabled] {
     border: none;
 }
 
-/* Totally unnecessary alternate table row background re-colouring (hover overrides) */
-.category_subcategories tbody tr:hover>td,
-.category_subcategories tbody tr:hover>th,
-.forumheaderlist tbody tr:hover>td,
-.forumheaderlist tbody tr:hover>th,
-.generaltable tbody tr:hover>td,
-.generaltable tbody tr:hover>th,
-.user-enroller-panel .uep-search-results .cohorts tbody tr:hover>td,
-.user-enroller-panel .uep-search-results .cohorts tbody tr:hover>th,
-.user-enroller-panel .uep-search-results .users tbody tr:hover>td,
-.user-enroller-panel .uep-search-results .users tbody tr:hover>th,
-table#modules tbody tr:hover>td,
-table#modules tbody tr:hover>th,
-table#permissions tbody tr:hover>td,
-table#permissions tbody tr:hover>th,
-table.flexible tbody tr:hover>td,
-table.flexible tbody tr:hover>th,
-table.grading-report tbody tr:hover>td,
-table.grading-report tbody tr:hover>th {
-    background-color: #f5f5f5;
-}
-
-/* Insanely ridiculous alternate table row link colouring overrides */
-table#explaincaps tbody > tr:nth-child(odd) > td a,
-table#defineroletable tbody > tr:nth-child(odd) > td a,
-table.grading-report tbody > tr:nth-child(odd) > td a,
-table#listdirectories tbody > tr:nth-child(odd) > td a,
-table.rolecaps tbody > tr:nth-child(odd) > td a,
-table.userenrolment tbody > tr:nth-child(odd) > td a,
-table#form tbody > tr:nth-child(odd) > td a,
-form#movecourses table tbody > tr:nth-child(odd) > td a,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td a,
-.forumheaderlist tbody > tr:nth-child(odd) > td a,
-table.flexible tbody > tr:nth-child(odd) > td a,
-.generaltable tbody > tr:nth-child(odd) > td a,
-table#explaincaps tbody > tr:nth-child(odd) > th a,
-table#defineroletable tbody > tr:nth-child(odd) > th a,
-table.grading-report tbody > tr:nth-child(odd) > th a,
-table#listdirectories tbody > tr:nth-child(odd) > th a,
-table.rolecaps tbody > tr:nth-child(odd) > th a,
-table.userenrolment tbody > tr:nth-child(odd) > th a,
-table#form tbody > tr:nth-child(odd) > th a,
-form#movecourses table tbody > tr:nth-child(odd) > th a,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > th a,
-.forumheaderlist tbody > tr:nth-child(odd) > th a,
-table.flexible tbody > tr:nth-child(odd) > th a,
-.generaltable tbody > tr:nth-child(odd) > th a,
-table#explaincaps tbody > tr:nth-child(odd) > td a:visited,
-table#defineroletable tbody > tr:nth-child(odd) > td a:visited,
-table.grading-report tbody > tr:nth-child(odd) > td a:visited,
-table#listdirectories tbody > tr:nth-child(odd) > td a:visited,
-table.rolecaps tbody > tr:nth-child(odd) > td a:visited,
-table.userenrolment tbody > tr:nth-child(odd) > td a:visited,
-table#form tbody > tr:nth-child(odd) > td a:visited,
-form#movecourses table tbody > tr:nth-child(odd) > td a:visited,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td a:visited,
-.forumheaderlist tbody > tr:nth-child(odd) > td a:visited,
-table.flexible tbody > tr:nth-child(odd) > td a:visited,
-.generaltable tbody > tr:nth-child(odd) > td a:visited,
-table#explaincaps tbody > tr:nth-child(odd) > th a:visited,
-table#defineroletable tbody > tr:nth-child(odd) > th a:visited,
-table.grading-report tbody > tr:nth-child(odd) > th a:visited,
-table#listdirectories tbody > tr:nth-child(odd) > th a:visited,
-table.rolecaps tbody > tr:nth-child(odd) > th a:visited,
-table.userenrolment tbody > tr:nth-child(odd) > th a:visited,
-table#form tbody > tr:nth-child(odd) > th a:visited,
-form#movecourses table tbody > tr:nth-child(odd) > th a:visited,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > th a:visited,
-.forumheaderlist tbody > tr:nth-child(odd) > th a:visited,
-table.flexible tbody > tr:nth-child(odd) > th a:visited,
-.generaltable tbody > tr:nth-child(odd) > th a:visited {
+/* Alternate table row link/icon colouring overrides */
+table a:not(.btn):not(.menu-action),
+table a:not(.btn):not(.menu-action) {
     color: #b5121b;
 }
-table#explaincaps tbody > tr:nth-child(odd) > td a:hover,
-table#defineroletable tbody > tr:nth-child(odd) > td a:hover,
-table.grading-report tbody > tr:nth-child(odd) > td a:hover,
-table#listdirectories tbody > tr:nth-child(odd) > td a:hover,
-table.rolecaps tbody > tr:nth-child(odd) > td a:hover,
-table.userenrolment tbody > tr:nth-child(odd) > td a:hover,
-table#form tbody > tr:nth-child(odd) > td a:hover,
-form#movecourses table tbody > tr:nth-child(odd) > td a:hover,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td a:hover,
-.forumheaderlist tbody > tr:nth-child(odd) > td a:hover,
-table.flexible tbody > tr:nth-child(odd) > td a:hover,
-.generaltable tbody > tr:nth-child(odd) > td a:hover,
-table#explaincaps tbody > tr:nth-child(odd) > th a:hover,
-table#defineroletable tbody > tr:nth-child(odd) > th a:hover,
-table.grading-report tbody > tr:nth-child(odd) > th a:hover,
-table#listdirectories tbody > tr:nth-child(odd) > th a:hover,
-table.rolecaps tbody > tr:nth-child(odd) > th a:hover,
-table.userenrolment tbody > tr:nth-child(odd) > th a:hover,
-table#form tbody > tr:nth-child(odd) > th a:hover,
-form#movecourses table tbody > tr:nth-child(odd) > th a:hover,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > th a:hover,
-.forumheaderlist tbody > tr:nth-child(odd) > th a:hover,
-table.flexible tbody > tr:nth-child(odd) > th a:hover,
-.generaltable tbody > tr:nth-child(odd) > th a:hover,
-table#explaincaps tbody > tr:nth-child(odd) > td a:focus,
-table#defineroletable tbody > tr:nth-child(odd) > td a:focus,
-table.grading-report tbody > tr:nth-child(odd) > td a:focus,
-table#listdirectories tbody > tr:nth-child(odd) > td a:focus,
-table.rolecaps tbody > tr:nth-child(odd) > td a:focus,
-table.userenrolment tbody > tr:nth-child(odd) > td a:focus,
-table#form tbody > tr:nth-child(odd) > td a:focus,
-form#movecourses table tbody > tr:nth-child(odd) > td a:focus,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > td a:focus,
-.forumheaderlist tbody > tr:nth-child(odd) > td a:focus,
-table.flexible tbody > tr:nth-child(odd) > td a:focus,
-.generaltable tbody > tr:nth-child(odd) > td a:focus,
-table#explaincaps tbody > tr:nth-child(odd) > th a:focus,
-table#defineroletable tbody > tr:nth-child(odd) > th a:focus,
-table.grading-report tbody > tr:nth-child(odd) > th a:focus,
-table#listdirectories tbody > tr:nth-child(odd) > th a:focus,
-table.rolecaps tbody > tr:nth-child(odd) > th a:focus,
-table.userenrolment tbody > tr:nth-child(odd) > th a:focus,
-table#form tbody > tr:nth-child(odd) > th a:focus,
-form#movecourses table tbody > tr:nth-child(odd) > th a:focus,
-#page-admin-course-index .editcourse tbody > tr:nth-child(odd) > th a:focus,
-.forumheaderlist tbody > tr:nth-child(odd) > th a:focus,
-table.flexible tbody > tr:nth-child(odd) > th a:focus,
-.generaltable tbody > tr:nth-child(odd) > th a:focus {
-    color: #555555;
+table .fa:not(.btn):not(.menu-action),
+table .fa:not(.btn):not(.menu-action) {
+    color: #888888 !important;
+}
+table a:not(.btn):not(.menu-action):hover,
+table a:not(.btn):not(.menu-action):focus,
+table .fa:not(.btn):not(.menu-action):hover,
+table .fa:not(.btn):not(.menu-action):focus {
+    color: #555555 !important;
 }
 
 /* Header */
@@ -317,7 +209,6 @@ table.flexible tbody > tr:nth-child(odd) > th a:focus,
 }
 .navbar .navbar-inner .dropdown .dropdown-menu a:first-of-type > .icon {
     margin-left: 0;
-    padding-right: 0;
 }
 .navbar .navbar-inner #custom_menu_activitystream .dropdown-menu,
 .navbar .navbar-inner #custom_menu_courses .dropdown-menu,
@@ -677,7 +568,7 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_settings .content p.tree_item.hasicon.activesetting .fa,
 .block_settings .content p.tree_item.hasicon.activesetting .fa:hover,
 .block_settings .content p.tree_item.hasicon.activesetting .fa:focus {
-    color: #999;
+    color: #bbb;
 }
 .block_navigation .header .title h2,
 .block_navigation .header .title .fa::before,
@@ -709,7 +600,7 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_navigation .content p.tree_item.hasicon:focus a,
 .block_navigation .content p.tree_item.hasicon:hover a>.fa,
 .block_navigation .content p.tree_item.hasicon:focus a>.fa {
-    color: #999;
+    color: #bbb;
 }
 .block_settings .header .title h2,
 .block_settings .header .title .fa::before,
@@ -736,7 +627,7 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_settings .content p.tree_item.hasicon:focus a,
 .block_settings .content p.tree_item.hasicon:hover a>.fa,
 .block_settings .content p.tree_item.hasicon:focus a>.fa {
-    color: #999;
+    color: #bbb;
 }
 .block_admin_bookmarks .header .title h2,
 .block_admin_bookmarks .header .title .fa::before,
@@ -751,8 +642,9 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 .block_admin_bookmarks .menubar .icon:focus::before,
 .block_admin_bookmarks .content a:hover,
 .block_admin_bookmarks .content a:focus {
-    color: #999;
+    color: #bbb;
 }
+.block_settings .content .type_siteadmin p.tree_item.hasicon a i.fa-cog,
 .block_settings .content .type_siteadmin p.tree_item.hasicon a i.fa-cogs,
 .block_settings .content .type_siteadmin p.tree_item.hasicon a img {
     display: none;
@@ -765,7 +657,7 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
 }
 .block_settings .content .type_siteadmin p.tree_item.hasicon:hover a::before,
 .block_settings .content .type_siteadmin p.tree_item.hasicon:focus a::before {
-    color: #999;
+    color: #bbb;
 }
 .block .moodle-actionmenu[data-enhanced].show {
     white-space: inherit;
@@ -839,7 +731,9 @@ body .course-content ul li.section.main.hidden {
 .path-mod-assign [data-region=review-panel] .assignfeedback_editpdf_widget .pageheader button img {
     padding-right: 0;
 }
-.path-mod-assign [data-region=grade-panel] .assignsubmission_comments .comment-link[aria-expanded=true] > .fa-plus-square:before {
+
+/* Fix expand/collapse icon for submission comments */
+.comment-link[aria-expanded=true] > .fa-plus-square::before {
     content: "\f146";
 }
 
@@ -920,6 +814,18 @@ body .course-content ul li.section.main.hidden {
     margin: 0;
 }
 
+/* Fix user profile header button icons */
+.userprofile .header-button-group span:first-of-type > .icon {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    vertical-align: inherit;
+}
+
+/* Hide block region names */
+.editing .block-region .regionname {
+    display: none;
+}
+
 /* mod_book */
 #page-mod-book-view #page #page-content #region-main {
     border: 1px solid #d3d3d3;
@@ -952,11 +858,23 @@ div#navbuttons a img:focus {
 }
 
 /* local_fullscreen fixes */
+#page-site-index #region-main div#fullscreen.fullscreen {
+    display: none;
+}
 #region-main div#fullscreen.fullscreen {
     z-index: 2;
 }
 div#fullscreenfloat.fullscreen {
     top: auto;
+}
+
+/* Initial bar fixes */
+.initialbar .letter {
+    color: #b5121b;
+}
+.initialbar .letter:hover,
+.initialbar .letter.active {
+    background-color: #b5121b;
 }
 
 /* Additional course format rules (from Stephen) */
