@@ -779,7 +779,7 @@ body .course-content ul li.section.main.hidden {
     top: 50px;
 }
 
-/* Fix spacing and alignment in forum posts */
+/* Forum layout fixes */
 .forumpost {
     padding: 2px 5px;
 }
@@ -792,10 +792,49 @@ body .course-content ul li.section.main.hidden {
 .forumpost .content .posting.fullpost {
     margin-top: auto;
 }
+body .forumpost .picture img {
+    width: 35px;
+    height: 35px;
+}
+body .forumpost .row .left {
+    width: 48px;
+}
+body .forumpost .row .content-mask,
+body .forumpost .row .options,
+body .forumpost .row .topic {
+    margin-left: 48px;
+}
+.movediscussionoption form#forummenu {
+    display: inline-flex;
+}
 
 /* Grading table edit menu fix */
 .moodle-actionmenu[data-enhanced].show .menu.align-tl-bl {
     top: -36px;
+}
+
+/* Grading table column header tool tips hack */
+#page-mod-assign-grading table.flexible th.header a {
+    position: relative;
+}
+#page-mod-assign-grading table.flexible th.header a::before {
+    content: attr(title);
+    position: absolute;
+    bottom: 20px;
+    color: #000;
+    background: #eee;
+    padding: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px #ddd;
+    font-size: 0.8em;
+    white-space: nowrap;
+    z-index: 1;
+    display: none;
+}
+#page-mod-assign-grading table.flexible th.header a:hover::before,
+#page-mod-assign-grading table.flexible th.header a:focus::before {
+    display: inherit;
 }
 
 /* Interactive transcript link */
@@ -860,7 +899,8 @@ div#navbuttons a img:focus {
 }
 
 /* local_fullscreen fixes */
-#page-site-index #region-main div#fullscreen.fullscreen {
+#page-site-index #region-main div#fullscreen.fullscreen,
+#page-user-profile #region-main div#fullscreen.fullscreen {
     display: none;
 }
 #region-main div#fullscreen.fullscreen {
