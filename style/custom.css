@@ -884,7 +884,8 @@ body .forumpost .row .topic {
     visibility: hidden;
 }
 #page-mod-questionnaire-preview .heading-rts,
-#page-mod-questionnaire-report .heading-rts {
+#page-mod-questionnaire-report .heading-rts,
+#page-mod-questionnaire-myreport .heading-rts {
     display: none;
 }
 @media print {
