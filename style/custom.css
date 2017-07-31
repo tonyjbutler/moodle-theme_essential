@@ -41,14 +41,6 @@ h1, h2, h3 {
     margin: 3px;
 }
 
-/* Button text colour overrides */
-input.btn, input.btn-link, input.btn-link:visited {
-    color: #282828 !important;
-}
-a.btn-primary, a.btn-danger, a.btn-info, a.btn-success, a.btn-warning {
-    color: #fff !important;
-}
-
 /* Button group background colour overrides */
 #page form .form-buttons #fgroup_id_buttonar,
 #page form table#form td.submit #fgroup_id_buttonar,
