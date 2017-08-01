@@ -829,7 +829,10 @@ body .forumpost .row .topic {
     display: inherit;
 }
 
-/* Interactive transcript link */
+/* Assignment feedback table */
+#page-mod-assign-view .feedbacktable .criterion-name {
+    font-weight: bold;
+}
 #page-mod-assign-view .feedbacktable .alert-error a {
     color: #555;
 }
