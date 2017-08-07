@@ -722,9 +722,12 @@ body .course-content ul li.section.main.hidden {
     padding-right: 0;
 }
 
-/* Fix expand/collapse icon for submission comments */
+/* Fix comments layout */
 .comment-link[aria-expanded=true] > .fa-plus-square::before {
     content: "\f146";
+}
+.comment-message .picture {
+    width: inherit;
 }
 
 /* Fix calendar block spacing */
@@ -919,6 +922,46 @@ div#navbuttons a img:focus {
 .initialbar .letter:hover,
 .initialbar .letter.active {
     background-color: #b5121b;
+}
+
+/* Make dimmed text dim again */
+a.dimmed,
+a.dimmed:link,
+a.dimmed:visited,
+a.dimmed_text,
+a.dimmed_text:link,
+a.dimmed_text:visited,
+.dimmed_text,
+.dimmed_text a,
+.dimmed_text a:link,
+.dimmed_text a:visited,
+.dimmed_category,
+.dimmed_category a,
+.dimmed_category a:link,
+.dimmed_category a:visited,
+.usersuspended,
+.usersuspended a,
+.usersuspended a:link,
+.usersuspended a:visited {
+    color: #aaa;
+}
+a.dimmed:hover,
+a.dimmed:focus,
+a.dimmed_text:hover,
+a.dimmed_text:focus,
+.dimmed_text:hover,
+.dimmed_text:focus,
+.dimmed_text a:hover,
+.dimmed_text a:focus,
+.dimmed_category:hover,
+.dimmed_category:focus,
+.dimmed_category a:hover,
+.dimmed_category a:hover,
+.usersuspended:hover,
+.usersuspended:focus,
+.usersuspended a:hover,
+.usersuspended a:focus {
+    color: #999;
 }
 
 /* Additional course format rules (from Stephen) */
