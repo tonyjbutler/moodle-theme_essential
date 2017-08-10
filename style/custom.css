@@ -666,6 +666,16 @@ nav[role=navigation] .coursesearch form input[type="submit"] {
     animation: fa-spin 1s infinite steps(8);
 }
 
+/* Side-pre block header fixes */
+#block-region-side-pre .block .header .title h2 {
+    text-shadow: none;
+    font-weight: bold;
+}
+#block-region-side-pre .block .header .title .fa:focus,
+#block-region-side-pre .block .header .title .fa:hover {
+    color: inherit;
+}
+
 /* Course */
 body .course-content ul li.section.main {
     border: 1px solid #e3e3e3;
@@ -865,6 +875,14 @@ body .forumpost .row .topic {
     display: none;
 }
 
+/* mod_aspirelist */
+#page-mod-aspirelist-view ul.sectionitems li.listitem,
+div.aspirelistbox ul.sectionitems li.listitem {
+    line-height: inherit;
+    background-image: none;
+    padding: 6px 0;
+}
+
 /* mod_book */
 #page-mod-book-view #page #page-content #region-main {
     border: 1px solid #d3d3d3;
@@ -962,6 +980,11 @@ a.dimmed_text:focus,
 .usersuspended a:hover,
 .usersuspended a:focus {
     color: #999;
+}
+
+/* Grid format layout fix */
+#gridiconcontainer ul.gridicons {
+    display: inherit;
 }
 
 /* Additional course format rules (from Stephen) */
